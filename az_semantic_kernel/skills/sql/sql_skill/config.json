@@ -1,0 +1,21 @@
+{
+    "schema": 1,
+    "type": "completion",
+    "description": "If the user query can be answered from sql schema, then use this function",
+    "completion": {
+      "max_tokens": 512,
+      "temperature": 0.0,
+      "top_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0
+    },
+    "input": {
+      "parameters": [
+        {
+          "name": "schema",
+          "description": "schema used to generate sql query from user natural language query",
+          "defaultValue": ""
+        }
+      ]
+    }
+  }

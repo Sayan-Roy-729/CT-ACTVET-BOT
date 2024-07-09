@@ -1,0 +1,21 @@
+{
+    "schema": 1,
+    "type": "completion",
+    "description": "To classify wether the given user query can be answered by pdf or sql. pdf query is a statement that requires more descriptive answer whereas sql query expects a precise answer from a structured database",
+    "completion": {
+      "max_tokens": 512,
+      "temperature": 0.0,
+      "top_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0
+    },
+    "input": {
+      "parameters": [
+        {
+            "name": "query",
+            "description": "Query that need to be classified as sql type or pdf type query",
+            "defaultValue": ""
+          }
+      ]
+    }
+  }

@@ -1,0 +1,29 @@
+With the given user query your task is to Identify wether the query can be answered from pdf or sql.
+Analyse the given user query and decide the given query can be answered from the pdf content or can be answered from sql schema. output only a single answer whether it is pdf or sql.
+PDF Query may ask for descriptive answer and Sql query is looks for precise answer like count etc. Sql query may also contain to plot a bar/pie or any other type of chart or may asked to show tabular format.
+
+Use one of the following sentence types. Only emit types, nothing else:
+Sentence Types: sql, pdf 
+
+Examples:
+
+User Query: give me introduction of data management.
+Type: pdf
+
+User Query: What was the turnaround for the year 2020?
+Type: sql
+
+User Query: benefits of data management.
+Type: pdf
+
+User Query: What is the LPT and APT count for the year 2020?
+Type: sql
+
+User Query: tell me scope of business mobile procedure.
+Type: pdf
+
+User Query: What is the highest target score for the General Stream for each year?
+Type: sql
+
+User Query :- {{$final_query}}
+Type:

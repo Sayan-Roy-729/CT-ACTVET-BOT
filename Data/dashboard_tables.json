@@ -1,0 +1,50 @@
+{
+    "ACTVET partners satisfaction": ["partnerssatisfactionsurvey"],
+    "iat students satisfaction": ["iat_student_survey"],
+    "Social Media Dashboard": ["SocialMediaAccounts_Data"],
+    "advtei certificate claims": ["Certificate_Claims", "ADVETI_Certificate_claims_Dim_Student"],
+    "IAT Staff Satisfaction": ["iat_staff_survey"],
+    "World Skills": ["WorldSkillsCompetitors"],
+    "vedc dashboard": ["VEDCStudnets_Enrollment"],
+    "emsat analysis": ["EMSAT_DATA", "Target_EMSAT"],
+    "ADVETI Staff Satisfaction": ["ADVETI_Staff_Survey"],
+    "EEE Program": ["EEE_Program", "EEE_Candidates"],
+    "Vedc Students Satisfaction": ["VedcStudentsSurvey"],
+    "actvet staff satisfaction": ["StaffSatisfactionsurvey"],
+    "Qualification Department": ["candidates"],
+    "Schools Parents Satisfaction": ["schools_parents_survey"],
+    "Schools Students Satisfaction": ["school_students_survey", 
+                                      "AnswersLookup_SchoolStudentsSatisfaction",  "QuestionOrder_SchoolStudentsSatisfaction"],
+    "Customer Care Satisfaction": [
+        "customer_survey_CustomerCareSatisfaction", "LinkTable_CustomerCareSatisfaction", "Target_CustomerCareSatisfaction", "Cases_CustomerCareSatisfaction"],
+    "Digital Transformation Dashboard": [
+        "digital_transformation_RequestTypeLookup", "Digital_transformation_Requests", "Digital_transformation_Satisfaction_Survey", "digital_transformation_Revenue", "Digital_transformation_Institutions", "LinkTable_DigitalTransformationDashboard", "digital_transformationParameters", "Digial_transformation_ACTVET_Services"],
+    "schools alumni": [
+        "DIM_ACADEMIC_ORGANIZATION_SCHOOL_ALUMNI", "schoolsalumni_alumni","DIM_STUDENT_SCHOOL_ALUMNI"],
+    "Emirates Skills": ["Asia", "GCC", "Competitors", "Winners"],
+    "adveti students satisfaction": ["ADVETI_Student_Surveys"],
+    "Schools Admission Dashboard": [
+        "schools_admission_data", "schools_admission_dim_organization" , "PSA_Institutes_Admission_Data"],
+    "schools dashboard": ["schools_dashboard_dim_academic_organization",
+        "schools_dashboard_dim_academic_stream",
+        "schools_dashboard_dim_student",
+        "schools_dashboard_fact_enrollment",
+        "Schools_Dashboard_Dim_Academic_Term",
+        "schools_dashboard_fact_Academic_term"],
+    "schools students behaviour": ["ss_behaviour_campus_srgt_mapping", "ss_behaviour_dim_academic_organization",
+                                "ss_behaviour_dim_student", "ss_behaviour_entity_mapping", 
+                                "ss_behaviour_fact_enrollment", "ss_behaviour_map_student", "ss_behaviour_streamsrgt_mapping", "ss_behaviour_studentsbehaviour",
+                                "SS_Behaviour_Dim_Academic_Stream"],
+    "Post-Secondary Admission Dashboard": [
+        "schools_admission_data",
+        "schools_admission_dim_organization",
+        "PSA_Institutes_Admission_Data"
+    ],
+    "Post-Secondary Monthly Snapshot": [
+        "psm_snapshot_dim_academic_program", "psm_snapshot_dim_academic_term", "psm_snapshot_dim_enrollment_status", "psm_snapshot_dim_student", "psm_snapshot_linktable", "psm_snapshot_student_enrollment", "PSM_Snapshot_Dim_Sponsor", "PSM_Snapshot_Dim_Academic_Organization", "PSM_Snapshot_Dim_Offered_Campus"],
+    "Post-Secondary Weekly Snapshot": [
+        "psw_snapshot_student_enrollment", "psws_dim_academic_program", "psws_dim_academic_term", "psws_dim_enrollment_status", "psws_dim_sponsor", "psws_dim_student", "psws_dim_week", "psws_linktable", "PSWS_Dim_Academic_Organization"],
+    "graduates and alumni tracking dashboard": [
+        "G_and_A_Traccking_Dim_Academic_Term", "G_and_A_Traccking_EMPLOYMENT", "G_and_A_Traccking_Academic_Organization", "G_and_A_Traccking_Student", "G_and_A_Traccking_DIM_EMPLOYER", "G_and_A_Traccking_Academic_Program", "G_and_A_Traccking_EmploymentFunction", "G_and_A_Traccking_EmploymentStatus"]
+    
+}

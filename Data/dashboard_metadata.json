@@ -1,0 +1,2817 @@
+{ 
+    "emsat analysis": {
+        "emsat_data": {
+            "description": "This table contains exam results of students from different academic years, schools, and streams, detailing their performance in various subjects along with categorization and proficiency levels.",
+            "columns": {
+                "Academic_Year": {
+                "description": "The academic year during which the exams were taken.",
+                "data_type": "string",
+                "examples": ["2020-2021", "2021-2022"]
+                },
+                "Year": {
+                "description": "The calendar year of the exam results.",
+                "data_type": "string",
+                "examples": ["2021", "2022"]
+                },
+                "StudentID": {
+                "description": "A unique identifier assigned to each student.",
+                "data_type": "string",
+                "examples": ["662591595", "869626158", "662526525", "662630107", "662643191"]
+                },
+                "School_Code": {
+                "description": "A unique code representing each school.",
+                "data_type": "string",
+                "examples": ["ATHS-AUH-G", "ATHS-AIN-G-AQB", "ATHS-AUH-G-BANIYAS", "ATHS-AUH-B", "ATHS-ADH-G"]
+                },
+                "Student_Name": {
+                "description": "The name of the student in English.",
+                "data_type": "string",
+                "examples": ["Salem Maher Abdulla Salem Aljaberi", "FATIMA ALI SALEM MOHAMMED ALHABSI",
+                "Abdulla Ali Musabbeh Alhanjari Almazrouei", "Sara Tareq Yaslam Bakran Betaish",
+                "Dana Khamis Ibrahim Abdalla Alhosani"]
+                },
+                "School_Name_AR": {
+                "description": "The name of the school in Arabic.",
+                "data_type": "string",
+                "examples": ["ثانوية التكنولوجيا التطبيقية - أبو ظبي - بنات",
+                "ثانوية التكنولوجيا التطبيقية - العين بنات - العقابية",
+                "ثانوية التكنولوجيا التطبيقية - أبو ظبي - بني ياس - بنات",
+                "ثانوية التكنولوجيا التطبيقية - أبو ظبي - بنين",
+                "ثانوية التكنولوجيا التطبيقية - أبو ظبي - بني ياس - بنين"]
+                },
+                "School_Name_EN": {
+                "description": "The name of the school in English.",
+                "data_type": "string",
+                "examples": ["Abu Dhabi Boys", "Baniyas Boys", "Al Ain Boys TBMEC", "Ajman Girls", "Abu Dhabi Girls", "Al Ain Girls TBMEC", "Baniyas Girls", "Al Ain Girls Al Aqabiya", "Al Ain Boys Al Aqabiya", "Falaj Al Mualla Girls", "Fujairah Boys", "Ras Al Khaima Boys", "Dubai Boys", "Sharjah Boys", "Al Dhafra Region Boys", "Al Dhafra Region Girls", "Falaj Al Mualla Boys", "Ajman Boys"]
+                },
+                "School_Category_EN": {
+                "description": "The category of the school.",
+                "data_type": "string",
+                "examples": ["ATHS"]
+                },
+                "Zone_Desc_AR": {
+                "description": "The zone description in Arabic.",
+                "data_type": "string",
+                "examples": ["أبو ظبي", "عجمان", "أم القيوين", "الشارقة", "رأس الخيمة", "الفجيرة", "دبي"]
+                },
+                "Zone_Desc_EN": {
+                "description": "The zone description in English.",
+                "data_type": "string",
+                "examples": ["Ajman", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain", "Abu Dhabi", "Fujairah", "Dubai"]
+                },
+                "GradeLevelID": {
+                "description": "The grade level of the student.",
+                "data_type": "string",
+                "examples": ["12", ""]
+                },
+                "StreamID": {
+                "description": "The stream ID which represents the academic track.",
+                "data_type": "string",
+                "examples": ["", "Grade 12-ENI", "Grade 12-AET", "Grade 12-CAI", "Grade 12-ASP"]
+                },
+                "Stream_Code": {
+                "description": "A code representing the academic stream.",
+                "data_type": "string",
+                "examples": ["", "ENI", "AET", "CAI", "ASP"]
+                },
+                "Stream": {
+                "description": "The academic stream or program for the exam.",
+                "data_type": "string",
+                "examples": ["Advanced Stream", "General Stream", "Advanced Science Program"]
+                },
+                "Exam": {
+                "description": "The subject of the exam.",
+                "data_type": "string",
+                "examples": ["English", "Math", "Arabic", "Physics", "Chemistry", "Computer Science", "Biology"]
+                },
+                "Result": {
+                "description": "The score achieved by the student in the exam.",
+                "data_type": "string",
+                "examples": ["925", "875", "1025", "950", "1050"]
+                },
+                "Result_Category": {
+                "description": "The category of the result based on score range.",
+                "data_type": "string",
+                "examples": ["0-899", "900-1249", "1250-2000"]
+                },
+                "Result_Category2": {
+                "description": "A secondary category of the result based on score range.",
+                "data_type": "string",
+                "examples": ["0-1099", "1100-2000"]
+                },
+                "Result_Category3": {
+                "description": "A tertiary category of the result based on score range.",
+                "data_type": "string",
+                "examples": ["0-499", "500-749", "750-999", "1000-1249", "1250-1499", "1500-2000"]
+                },
+                "ResultCategoryOrder": {
+                "description": "The order of the result category.",
+                "data_type": "string",
+                "examples": ["1", "2", "3"]
+                },
+                "Result_Category1": {
+                "description": "The primary category of the result based on score range.",
+                "data_type": "string",
+                "examples": ["0-499", "500-699", "700-899", "900-1099", "1100-1299", "1300-1499", "1500-2000"]
+                },
+                "ResultCategory1Order": {
+                "description": "The order of the primary result category.",
+                "data_type": "string",
+                "examples": ["1", "2", "3"]
+                },
+                "Result_Category_English": {
+                "description": "The English proficiency category of the result.",
+                "data_type": "string",
+                "examples": ["Independent", "Basic", "Proficient"]
+                },
+                "Result_Category_Arabic": {
+                "description": "The Arabic proficiency category of the result.",
+                "data_type": "string",
+                "examples": ["Below Expectations", "Above Expectations", "Meet Expectations"]
+                },
+                "Result_Category_Science": {
+                "description": "The science proficiency category of the result.",
+                "data_type": "string",
+                "examples": ["Borderline Proficient", "Proficient", "Basic", "High Proficiency", "Needs Improvement", "Little knowledge of basic science"]
+                },
+                "School_Score": {
+                "description": "The overall score of the school.",
+                "data_type": "int",
+                "examples": [3, 2, 4, 0, 1, 5]
+                },
+                "Performance": {
+                "description": "The performance indicator.",
+                "data_type": "int",
+                "examples": [0, 1]
+                },
+                "Performance_Score": {
+                "description": "The performance score of the student.",
+                "data_type": "bigint",
+                "examples": [1, 2, 3, 0, 4, 5]
+                },
+                "EnglishPassed": {
+                "description": "Indicates if the student passed the English exam (1 for pass, 0 for fail).",
+                "data_type": "bigint",
+                "examples": [1, 0]
+                },
+                "MathPassed": {
+                "description": "Indicates if the student passed the Math exam (1 for pass, 0 for fail).",
+                "data_type": "bigint",
+                "examples": [0, 1]
+                },
+                "PhysicsPassed": {
+                "description": "Indicates if the student passed the Physics exam (1 for pass, 0 for fail).",
+                "data_type": "bigint",
+                "examples": [0, 1]
+                },
+                "ChemistryPassed": {
+                "description": "Indicates if the student passed the Chemistry exam (1 for pass, 0 for fail).",
+                "data_type": "bigint",
+                "examples": [0, 1]
+                },
+                "BiologyPassed": {
+                "description": "Indicates if the student passed the Biology exam (1 for pass, 0 for fail).",
+                "data_type": "bigint",
+                "examples": [0, 1]
+                },
+                "Key": {
+                "description": "A unique key combining the academic year, school code, and stream. This can be used as a foreign key to join with other tables.",
+                "data_type": "string",
+                "examples": ["2021-2022|ATHS-AUH-G-BANIYAS|Advanced Stream",
+                "2021-2022|ATHS-AIN-G-AQB|Advanced Stream", "2021-2022|ATHS-AUH-B-BANIYAS|Advanced Stream",
+                "2020-2021|ATHS-AUH-G|Advanced Stream", "2021-2022|ATHS-AUH-B|Advanced Stream"]
+                },
+                "Stream_Group": {
+                "description": "The group of the academic stream.",
+                "data_type": "string",
+                "examples": ["Advanced Stream", "General Stream"]
+                },
+                "TargetKey": {
+                "description": "A unique key combining the year, stream, and exam subject.",
+                "data_type": "string",
+                "examples": ["2021|Advanced Stream|English", "2021|Advanced Stream|Math", "2021|Advanced Stream|Arabic", "2021|Advanced Stream|Physics", "2022|Advanced Stream|English"]
+                },
+                "Greater_than_1500": {
+                "description": "Indicates if the Result is greater than 1500 (Yes or No).",
+                "data_type": "string",
+                "examples": ["No", "Yes"]
+                },
+                "Greater_than_1900": {
+                "description": "Indicates if the Result is greater than 1900 (Yes or No).",
+                "data_type": "string",
+                "examples": ["No", "Yes"]
+                },
+                "Greater_than_2000": {
+                "description": "Indicates if the Result is greater than 2000 (Yes or No).",
+                "data_type": "string",
+                "examples": ["No", "Yes"]
+                },
+                "Performance_Score_English_is_Must": {
+                "description": "The performance score when English is a required subject.",
+                "data_type": "bigint",
+                "examples": [1, 2, 3, 0, 4, 5]
+                },
+                "Performance_Score_English_and_Math_are_Must": {
+                "description": "The performance score when both English and Math are required subjects.",
+                "data_type": "bigint",
+                "examples": [0, 3, 2, 4, 5]
+                },
+                "Exams": {
+                    "description": "The list of exams taken by the student.",
+                    "data_type": "string",
+                    "examples": ["English", "NA", "English+ Math", "English+ Math + Physics + Chemistry",
+                    "English+ Math + Physics"]
+                },
+                "Exams_All_Combinations": {
+                    "description": "The list of all possible combinations of exams taken by the student.",
+                    "data_type": "string",
+                    "examples": ["English", "", "EnglishMath", "EnglishMathPhysicsChemistry", "EnglishMathPhysics"]
+                }
+            }
+        },
+
+        "target_emsat": {
+            "description": "The table contains 2023 exam target scores for different subjects across various educational streams.",
+            "columns": {
+                "TargetKey": {
+                    "description": "A unique key representing the combination of year, stream, and subject.",
+                    "data_type": "string",
+                    "examples": [ "2023|Advanced Stream|English", "2023|General Stream|Chemistry",
+                        "2023|Advanced Science Program|Computer Science", "2023|Advanced Science Program|Chemistry", "2023|Advanced Science Program|Biology"]
+                },
+                "Year": {
+                    "description": "The year of the exam.",
+                    "data_type": "string",
+                    "examples": ["2023"]
+                },
+                "Stream": {
+                    "description": "The educational stream or program.",
+                    "data_type": "string",
+                    "examples": ["Advanced Stream", "General Stream", "Advanced Science Program"]
+                },
+                "Exam": {
+                    "description": "The subject of the exam.",
+                    "data_type": "string",
+                    "examples": ["English", "Math", "Physics", "Biology", "Chemistry", "Computer Science", "Arabic" ]
+                },
+                "Target_Score": {
+                    "description": "The target score for the exam.",
+                    "data_type": "string",
+                    "examples": ["970", "1465", "1110", "1510", "990"]
+                }
+            }
+        }
+    },
+    "post-secondary monthly snapshot": {
+        "psm_snapshot_dim_academic_program": {
+            "description": "Contains information about various academic programs including their codes, names, levels, and specializations.",
+            "columns": {
+                "Key_SRGT_Academic_Program": {
+                    "description": "Unique identifier for the academic program.",
+                    "data_type": "int",
+                    "examples": ["24089", "24184"]
+                },
+                "Academic_Program_Business_Key_Code": {
+                    "description": "Business key code for the academic program.",
+                    "data_type": "string",
+                    "examples": ["ADVETI-10-BU-DVM-DP-DVM-DP", "ADVETI-BAD-CR-L4-BA-CR"]
+                },
+                "Program_Code": {
+                    "description": "Code of the academic program.",
+                    "data_type": "string",
+                    "examples": ["10-BU-DVM-DP", "BAD-CR-L4"]
+                },
+                "Program_Name": {
+                    "description": "Name of the academic program.",
+                    "data_type": "string",
+                    "examples": ["Diploma of Property (DVM)", "Cert 4 in Business Admin"]
+                },
+                "Program_Major_Code": {
+                    "description": "Code for the major of the academic program.",
+                    "data_type": "string",
+                    "examples": ["DVM", "BA"]
+                },
+                "Program_Major_Name": {
+                    "description": "Name of the major of the academic program.",
+                    "data_type": "string",
+                    "examples": ["Development & Management", "Business Administration"]
+                },
+                "Program_Level_Code": {
+                    "description": "Code for the level of the academic program.",
+                    "data_type": "string",
+                    "examples": ["DP", "CR"]
+                },
+                "Program_Level_Name": {
+                    "description": "Name of the level of the academic program.",
+                    "data_type": "string",
+                    "examples": ["Diploma", "Certificate Program"]
+                },
+                "Program_Credit_Hours_Standard": {
+                    "description": "Standard credit hours for the academic program.",
+                    "data_type": "string",
+                    "examples": ["", ""]
+                },
+                "Program_Group": {
+                    "description": "Group of the academic program.",
+                    "data_type": "string",
+                    "examples": ["IT", "Other"]
+                },
+                "Degree_code": {
+                    "description": "Code of the degree awarded upon completion of the program.",
+                    "data_type": "string",
+                    "examples": ["DPTY", "CERT4"]
+                },
+                "Degree": {
+                    "description": "Degree awarded upon completion of the program.",
+                    "data_type": "string",
+                    "examples": ["Diploma of Property", "Certificate IV"]
+                },
+                "Specialization": {
+                    "description": "Specialization of the academic program.",
+                    "data_type": "string",
+                    "examples": ["Scientific", "Non-Scientific"]
+                }
+            }
+        },
+        "psm_snapshot_dim_academic_term": {
+            "description": "The table represents academic term data for schools. It includes unique identifiers for each term, business key codes, term names, term numbers, academic years, term years, and the start and end dates of each term. The data encompasses various academic years and terms, providing a detailed breakdown of the academic calendar for different institutions. This structured information helps in managing and analyzing the academic schedules across multiple academic years and terms.",
+            "columns": {
+                "Key_SRGT_Academic_Term": {
+                    "description": "Unique identifier for the academic term",
+                    "data_type": "bigint",
+                    "examples": [10458, 10833, 10845, 10844, 10843]
+                },
+                "key_term": {
+                    "description": "Alternate unique identifier for the academic term",
+                    "data_type": "int",
+                    "examples": [10458, 10833, 10845, 10844, 10843]
+                },
+                "Academic_Term_Business_Key_Code": {
+                    "description": "Business key code representing the academic term",
+                    "data_type": "string",
+                    "examples": ["Not Happened Yet", "ADPOLY-202230", "ADPOLY-202320", "ADPOLY-202310", "FCHS-202310"]
+                },
+                "Term": {
+                    "description": "Descriptive name of the academic term",
+                    "data_type": "string",
+                    "examples": ["The Beginning of Time", "The End of Time", "Not Happened Yet", "Preparatoy Semester(2021-2022)", "Summer Semester 1 (2022-2023)"]
+                },
+                "TermNo": {
+                    "description": "Numerical order of the term within an academic year",
+                    "data_type": "int",
+                    "examples": [1, 2, 3, 4, 5, 6]
+                },
+                "Term_Number": {
+                    "description": "String representation of the term number",
+                    "data_type": "string",
+                    "examples": ["Term 1", "Term 2", "Term 3", "Term 4", "Term 5", "Term 6"]
+                },
+                "Academic_Year": {
+                    "description": "Academic year to which the term belongs",
+                    "data_type": "string",
+                    "examples": ["2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023"]
+                },
+                "Term_Year": {
+                    "description": "Year in which the term occurs",
+                    "data_type": "int",
+                    "examples": [2019, 2020, 2021, 2023, 2022, 2024]
+                },
+                "Term_Start_Date": {
+                    "description": "Start date of the academic term",
+                    "data_type": "date",
+                    "examples": ["2021-01-10", "2022-08-22", "2024-01-08", "2019-08-25", "1900-01-01"]
+                },
+                "Term_End_Date": {
+                    "description": "End date of the academic term",
+                    "data_type": "date",
+                    "examples": ["2019-07-04", "2022-12-16", "1900-12-30", "2999-05-15", "2024-05-17"]
+                }
+            }
+        },
+        "psm_snapshot_dim_enrollment_status": {
+            "description": "Contains enrollment status codes and descriptions for students.",
+            "columns": {
+                "Key_SRGT_Enrollment_Status": {
+                    "description": "A unique identifier for the enrollment status.",
+                    "data_type": "string",
+                    "examples": ["13", "9", "12", "26", "24"]
+                },
+                "Enrollment_Status_Business_Key_Code": {
+                    "description": "Business key code representing the enrollment status.",
+                    "data_type": "string",
+                    "examples": ["ADPOLY-WP", "ADPOLY-EL", "ADPOLY-NS", "ADVETI-W0", "ADVETI-NS"]
+                },
+                "Enrollment_Status": {
+                    "description": "Description of the enrollment status.",
+                    "data_type": "string",
+                    "examples": ["Withdrawn late with Penalty", "Eligible to Register", "No Show", "DO NOT USE"]
+                }
+            }
+        },
+        "psm_snapshot_dim_student":{
+                "description":"A detailed student dimension containing personal, academic, and contact information, including unique identifiers, nationality status, and demographic details for educational institution management.",
+            "columns": {
+                "Key_SRGT_Student": {
+                    "description": "Unique key identifier for each student.",
+                    "data_type": "int",
+                    "examples": [
+                        "1639831",
+                        "1677961",
+                        "1698596"
+                    ]
+                },
+                "Student_Key_Code": {
+                    "description": "Unique code assigned to each student.",
+                    "data_type": "string",
+                    "examples": [
+                        "A00029687",
+                        "A00057509",
+                        "M00008665"
+                    ]
+                },
+                "Student_Name_AR": {
+                    "description": "Student's name in Arabic.",
+                    "data_type": "string",
+                    "examples": [
+                        "Muhammad Aslam  Muhammad Mayar",
+                        "Ahmad Awadh Saeed Awadh Alrashdi",
+                        "null"
+                    ]
+                },
+                "Student_Name_EN": {
+                    "description": "Student's name in English.",
+                    "data_type": "string",
+                    "examples": [
+                        "Muhammad Aslam Muhammad Mayar",
+                        "Ahmad Awadh Saeed Awadh Alrashdi",
+                        "Mazna Sultan Butti Almansoori"
+                    ]
+                },
+                "Is_National_Student": {
+                    "description": "Indicates if the student is a national.",
+                    "data_type": "boolean",
+                    "examples": [
+                        "No",
+                        "1"
+                    ]
+                },
+                "Is_National_Mother_Student": {
+                    "description": "Indicates if the student's mother is a national.",
+                    "data_type": "boolean",
+                    "examples": [
+                        "1",
+                        "No"
+                    ]
+                },
+                "Is_GCC_Student": {
+                    "description": "Indicates if the student is from a GCC country.",
+                    "data_type": "boolean",
+                    "examples": [
+                        "No",
+                        "1"
+                    ]
+                },
+                "Is_Expat_Student": {
+                    "description": "Indicates if the student is an expatriate.",
+                    "data_type": "boolean",
+                    "examples": [
+                        "No"
+                    ]
+                },
+                "Student_Nationality": {
+                    "description": "Nationality of the student.",
+                    "data_type": "string",
+                    "examples": [
+                        "Unknown",
+                        "United Arab Emirates"
+                    ]
+                },
+                "Student_Nationality_Group": {
+                    "description": "Grouping of student's nationality.",
+                    "data_type": "string",
+                    "examples": [
+                        "Mother National",
+                        "Expat"
+                    ]
+                },
+                "Student_Date_of_Birth": {
+                    "description": "Student's date of birth.",
+                    "data_type": "string",
+                    "examples": [
+                        "null"
+                    ]
+                },
+                "Student_Gender": {
+                    "description": "Gender of the student.",
+                    "data_type": "string",
+                    "examples": [
+                        "Male",
+                        "Female"
+                    ]
+                },
+                "Student_Marital_Status": {
+                    "description": "Marital status of the student.",
+                    "data_type": "string",
+                    "examples": [
+                        "null"
+                    ]
+                },
+                "Student_Emirates_ID": {
+                    "description": "Student's Emirates ID number.",
+                    "data_type": "string",
+                    "examples": [
+                        "7.842E+14",
+                        "7.84199E+14"
+                    ]
+                },
+                "Student_Passport_Number": {
+                    "description": "Student's passport number.",
+                    "data_type": "string",
+                    "examples": [
+                        "null"
+                    ]
+                },
+                "Student_Email": {
+                    "description": "Student's email address(es).",
+                    "data_type": "string",
+                    "examples": [
+                        "PERS: in.gulsse2u@gmail.com/",
+                        "PERS: S97292@students.adec.ac.ae/PERS: vqhid37@gmail.com/"
+                    ]
+                },
+                "Student_Telephone": {
+                    "description": "Student's telephone number.",
+                    "data_type": "string",
+                    "examples": [
+                        "null"
+                    ]
+                },
+                "Student_Mobile": {
+                    "description": "Student's mobile number(s).",
+                    "data_type": "string",
+                    "examples": [
+                        "HO: 0508478885 LL: 0508478885 MOB: 0567446748 PA: 0508478885",
+                        "FA: 0503337819 MOB: 0505254616 MR: 0507776272"
+                    ]
+                },
+                "Student_Address": {
+                    "description": "Student's address.",
+                    "data_type": "string",
+                    "examples": [
+                        "null"
+                    ]
+                },
+                "Student_PO_Box": {
+                    "description": "Student's PO Box number.",
+                    "data_type": "string",
+                    "examples": [
+                        "null",
+                        "80115"
+                    ]
+                },
+                "Student_City": {
+                    "description": "City where the student resides.",
+                    "data_type": "string",
+                    "examples": [
+                        "null",
+                        "Abu Dhabi",
+                        "Ghayathi",
+                        "Sharjah"
+                    ]
+                },
+                "Student_Emirate": {
+                    "description": "Emirate where the student resides.",
+                    "data_type": "string",
+                    "examples": [
+                        "null"
+                    ]
+                }
+            }
+        },
+        "psm_snapshot_linktable": {
+            "description": "Contains link information for student enrollments across various academic organizations, programs, and terms.",
+            "columns": {
+                "EnrollmentKey": {
+                    "description": "Unique key for the enrollment record.",
+                    "data_type": "string",
+                    "examples": ["I206", "I375"]
+                },
+                "Data_Source": {
+                    "description": "Source of the data.",
+                    "data_type": "string",
+                    "examples": ["Institute"]
+                },
+                "Key_SRGT_Student": {
+                    "description": "Unique identifier for the student.",
+                    "data_type": "int",
+                    "examples": ["1690828", "1687530"]
+                },
+                "Key_SRGT_Academic_Organization": {
+                    "description": "Unique identifier for the academic organization.",
+                    "data_type": "int",
+                    "examples": ["2831", "2915"]
+                },
+                "Key_SRGT_Academic_Program": {
+                    "description": "Unique identifier for the academic program.",
+                    "data_type": "int",
+                    "examples": ["24810", "24808"]
+                },
+                "Key_SRGT_Academic_Term": {
+                    "description": "Unique identifier for the academic term.",
+                    "data_type": "int",
+                    "examples": ["10837", "10840"]
+                },
+                "Key_SRGT_Sponsor": {
+                    "description": "Unique identifier for the sponsor.",
+                    "data_type": "int",
+                    "examples": ["3"]
+                },
+                "Key_SRGT_Enrollment_Status": {
+                    "description": "Unique identifier for the enrollment status.",
+                    "data_type": "int",
+                    "examples": ["21", "19"]
+                },
+                "Date": {
+                    "description": "Date of the record.",
+                    "data_type": "date",
+                    "examples": ["4/1/2022"]
+                },
+                "Year": {
+                    "description": "Year of the record.",
+                    "data_type": "int",
+                    "examples": ["2022"]
+                },
+                "Month": {
+                    "description": "Month of the record.",
+                    "data_type": "int",
+                    "examples": ["4"]
+                },
+                "Year_Month": {
+                    "description": "Year and month of the record.",
+                    "data_type": "string",
+                    "examples": ["202204"]
+                },
+                "Month_Year": {
+                    "description": "Month and year of the record.",
+                    "data_type": "string",
+                    "examples": ["4 2022"]
+                },
+                "Quarter": {
+                    "description": "Quarter of the record.",
+                    "data_type": "string",
+                    "examples": ["Q2"]
+                },
+                "AUDIT_SRGT_INSERT": {
+                    "description": "Audit field for insert operations.",
+                    "data_type": "string",
+                    "examples": [""]
+                },
+                "Data_Subject": {
+                    "description": "Subject of the data.",
+                    "data_type": "string",
+                    "examples": ["Student Enrollment"]
+                }
+            }
+        },
+        "psm_snapshot_student_enrollment": {
+            "description": "Contains information about student enrollments including their academic program, term, and various enrollment statuses.",
+            "columns": {
+                "Data_Source": {
+                    "description": "Source of the data.",
+                    "data_type": "string",
+                    "examples": ["Institute"]
+                },
+                "Key_SRGT_Student": {
+                    "description": "Unique identifier for the student.",
+                    "data_type": "int",
+                    "examples": ["1687090", "1691223"]
+                },
+                "Key_SRGT_Academic_Organization": {
+                    "description": "Unique identifier for the academic organization.",
+                    "data_type": "int",
+                    "examples": ["2831", "2915"]
+                },
+                "Key_SRGT_Academic_Program": {
+                    "description": "Unique identifier for the academic program.",
+                    "data_type": "int",
+                    "examples": ["24808", "24811"]
+                },
+                "Key_SRGT_Academic_Term": {
+                    "description": "Unique identifier for the academic term.",
+                    "data_type": "int",
+                    "examples": ["10837", "10838"]
+                },
+                "Key_SRGT_Sponsor": {
+                    "description": "Unique identifier for the sponsor.",
+                    "data_type": "int",
+                    "examples": ["3", "41"]
+                },
+                "Key_SRGT_Month": {
+                    "description": "Unique identifier for the month.",
+                    "data_type": "int",
+                    "examples": ["202204"]
+                },
+                "Key_SRGT_Enrollment_Status": {
+                    "description": "Unique identifier for the enrollment status.",
+                    "data_type": "int",
+                    "examples": ["21", "19"]
+                },
+                "Student_Age": {
+                    "description": "Age of the student.",
+                    "data_type": "int",
+                    "examples": ["21", "19"]
+                },
+                "Number_of_Students": {
+                    "description": "Number of students.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_Registered_Students": {
+                    "description": "Number of registered students.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_New_Students": {
+                    "description": "Number of new students.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_New_to_Program_Students": {
+                    "description": "Number of students new to the program.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_New_to_Level_Students": {
+                    "description": "Number of students new to the level.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_New_to_Institute_Students": {
+                    "description": "Number of students new to the institute.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_Sponsored_Students": {
+                    "description": "Number of sponsored students.",
+                    "data_type": "int",
+                    "examples": ["0", "1"]
+                },
+                "Number_of_Leaver_Students": {
+                    "description": "Number of students who left.",
+                    "data_type": "int",
+                    "examples": ["1", "0"]
+                },
+                "Attempted_Credit_Hours": {
+                    "description": "Number of credit hours attempted by students.",
+                    "data_type": "int",
+                    "examples": ["19", "5"]
+                },
+                "Completed_Credit_Hours": {
+                    "description": "Number of credit hours completed by students.",
+                    "data_type": "int",
+                    "examples": ["0", "5"]
+                },
+                "Completion_Percent": {
+                    "description": "Percentage of completion.",
+                    "data_type": "float",
+                    "examples": ["0.0", "1.0"]
+                },
+                "Term_GPA": {
+                    "description": "GPA of the students for the term.",
+                    "data_type": "float",
+                    "examples": ["0.0", "3.28"]
+                },
+                "Has_GPA_Record": {
+                    "description": "Indicator if the student has a GPA record.",
+                    "data_type": "string",
+                    "examples": ["Y", "N"]
+                },
+                "Program_GPA": {
+                    "description": "GPA for the program.",
+                    "data_type": "float",
+                    "examples": ["0.0", "3.28"]
+                },
+                "Program_Credit_Hours": {
+                    "description": "Number of credit hours for the program.",
+                    "data_type": "int",
+                    "examples": ["127"]
+                },
+                "Student_Has_Registered_Record": {
+                    "description": "Indicator if the student has a registered record.",
+                    "data_type": "string",
+                    "examples": ["Y", "N"]
+                },
+                "Student_Has_Active_Registration": {
+                    "description": "Indicator if the student has an active registration.",
+                    "data_type": "string",
+                    "examples": ["Y", "N"]
+                },
+                "Student_Currently_Enrolled": {
+                    "description": "Indicator if the student is currently enrolled.",
+                    "data_type": "string",
+                    "examples": ["Yes", "No"]
+                },
+                "Number_of_Registered_Terms": {
+                    "description": "Number of registered terms for the student.",
+                    "data_type": "int",
+                    "examples": ["2", "1"]
+                },
+                "AUDIT_SRGT_INSERT": {
+                    "description": "Audit field for insert operations.",
+                    "data_type": "string",
+                    "examples": [""]
+                },
+                "Student_Contract_Hours": {
+                    "description": "Number of contract hours for the student.",
+                    "data_type": "float",
+                    "examples": ["20.43", "26.36"]
+                },
+                "EnrollmentKey": {
+                    "description": "Unique key for the enrollment record.",
+                    "data_type": "string",
+                    "examples": ["I62", "I90"]
+                }
+            }
+        },
+        "psm_snapshot_dim_sponsor": {
+            "description": "Contains details about various sponsors including their key codes and names.",
+            "columns": {
+                "Key_SRGT_Sponsor": {
+                    "description": "Unique identifier for the sponsor.",
+                    "data_type": "int",
+                    "examples": [94, 49, 51, 55, 84]
+                },
+                "Sponsor_Business_Key_Code": {
+                    "description": "Business key code for the sponsor.",
+                    "data_type": "string",
+                    "examples": ["Privet Affairs Dpt. Sh. Fatima", "NAPO", "S2 Operations & Maint Company", "Shweehat", "Fatima College of Health Sciences (FCHS)"]
+                },
+                "Sponsor_Name": {
+                    "description": "Name of the sponsor.",
+                    "data_type": "string",
+                    "examples": ["Privet Affairs Dpt. Sh. Fatima", "NAPO", "S2 Operations & Maint Company", "Shweehat", "Fatima College of Health Sciences (FCHS)"]
+                }
+            }
+        },
+        "psm_snapshot_dim_academic_organization": {
+            "description": "Contains information about academic organizations, including campus details and geographical information.",
+            "columns": {
+                "Key_SRGT_Academic_Organization": {
+                    "description": "Unique identifier for each academic organization record.",
+                    "data_type": "string",
+                    "examples": ["2917", "2897", "2859", "2863", "2832"]
+                },
+                "Academic_Organization_Business_Key_Code": {
+                    "description": "Business key code for the academic organization.",
+                    "data_type": "string",
+                    "examples": ["ADVETI-VDS", "FCHS-ADH", "ADVETI-MBZ", "ADVETI-PAL", "ADVETI-AGB"]
+                },
+                "Authority": {
+                    "description": "Authority governing the academic organization.",
+                    "data_type": "string",
+                    "examples": ["ADVETI", "IAT"]
+                },
+                "Entity": {
+                    "description": "Entity to which the academic organization belongs.",
+                    "data_type": "string",
+                    "examples": ["ADVETI", "FCHS"]
+                },
+                "Campus_Code": {
+                    "description": "Code assigned to the campus.",
+                    "data_type": "string",
+                    "examples": ["VDS", "ADH", "MBZ", "PAL", "AGB"]
+                },
+                "ACDORG_CAMPUS_CODE": {
+                    "description": "Campus code used within the academic organization.",
+                    "data_type": "string",
+                    "examples": ["VDS", "ADH", "MBZ", "PAL", "AGB"]
+                },
+                "Campus_Name_EN": {
+                    "description": "Campus name in English.",
+                    "data_type": "string",
+                    "examples": ["VEDC Sharjah", "Al Jazirah Institute - Rabdan", "Seer Bany Yas Campus", "AD Polytechnic Al Ain", "Baynounah Institute"]
+                },
+                "Campus_Name_AR": {
+                    "description": "Campus name in Arabic.",
+                    "data_type": "string",
+                    "examples": ["nan"]
+                },
+                "campus_city": {
+                    "description": "City where the campus is located.",
+                    "data_type": "string",
+                    "examples": ["Sharjah", "Abu Dhabi", "Al Ain", "Al Dhafra"]
+                },
+                "Campus_Emirate": {
+                    "description": "Emirate where the campus is located.",
+                    "data_type": "string",
+                    "examples": ["Sharjah", "Abu Dhabi"]
+                },
+                "Education_Type": {
+                    "description": "Type of education provided at the campus.",
+                    "data_type": "string",
+                    "examples": ["Post-Secondary"]
+                },
+                "Campus_Longitude": {
+                    "description": "Longitude coordinate of the campus.",
+                    "data_type": "string",
+                    "examples": ["55.47105", "54.51035", "52.59867", "55.62532", "53.69021"]
+                },
+                "Campus_Latitude": {
+                    "description": "Latitude coordinate of the campus.",
+                    "data_type": "string",
+                    "examples": ["25.27248", "24.40766", "24.32412", "24.27387", "23.67858"]
+                },
+                "Campus_Long_Lat": {
+                    "description": "Combined longitude and latitude coordinates of the campus.",
+                    "data_type": "string",
+                    "examples": ["[55.471050,25.272480]", "[54.510350,24.407660]", "[52.598670,24.324120]", "[55.625320,24.273870]", "[53.690210,23.678580]"]
+                },
+                "Campus_Capacity": {
+                    "description": "Capacity of the campus.",
+                    "data_type": "string",
+                    "examples": ["null", "990", "1125", "595"]
+                }
+            }
+        },
+        "psm_snapshot_dim_offered_campus": {
+            "description": "Contains enrollment data of students across different campuses.",
+            "columns": {
+                "EnrollmentKey": {
+                "description": "Unique identifier for each enrollment record.",
+                "data_type": "string",
+                "examples": ["I1786914", "I1388293", "I1025414", "I58086", "I1732163"]
+                },
+                "Data_Source": {
+                "description": "Source of the data.",
+                "data_type": "string",
+                "examples": ["Institute"]
+                },
+                "Key_SRGT_Student": {
+                "description": "Unique identifier for each student.",
+                "data_type": "string",
+                "examples": ["1683504", "1640341", "1653180", "1628887", "1690456"]
+                },
+                "Key_SRGT_Academic_Organization": {
+                "description": "Identifier for the academic organization.",
+                "data_type": "string",
+                "examples": ["2831"]
+                },
+                "Key_SRGT_Academic_Program": {
+                "description": "Identifier for the academic program enrolled in.",
+                "data_type": "string",
+                "examples": ["24907", "24182", "24117", "24085"]
+                },
+                "Key_SRGT_Academic_Term": {
+                "description": "Identifier for the academic term.",
+                "data_type": "string",
+                "examples": ["10848", "10565", "10518", "10539"]
+                },
+                "Key_SRGT_Sponsor": {
+                "description": "Identifier for the sponsor associated.",
+                "data_type": "string",
+                "examples": ["3"]
+                },
+                "Key_SRGT_Enrollment_Status": {
+                "description": "Identifier for the enrollment status.",
+                "data_type": "string",
+                "examples": ["19"]
+                },
+                "Date": {
+                "description": "Date of the record.",
+                "data_type": "date",
+                "examples": ["10/1/2022", "8/1/2018", "9/1/2018"]
+                },
+                "Year": {
+                "description": "Year of the record.",
+                "data_type": "string",
+                "examples": ["2022", "2018"]
+                },
+                "Month": {
+                "description": "Month of the record.",
+                "data_type": "string",
+                "examples": ["10", "8", "9"]
+                },
+                "Year_Month": {
+                "description": "Concatenated year and month of the record.",
+                "data_type": "string",
+                "examples": ["202210", "201808", "201809"]
+                },
+                "Month_Year": {
+                "description": "Concatenated month and year of the record.",
+                "data_type": "string",
+                "examples": ["10 2022", "8 2018", "9 2018"]
+                },
+                "Quarter": {
+                "description": "Quarter of the year.",
+                "data_type": "string",
+                "examples": ["Q4", "Q3"]
+                },
+                "AUDIT_SRGT_INSERT": {
+                "description": "Audit field for insertion timestamp",
+                "data_type": "string",
+                "examples": []
+                },
+                "Data_Subject": {
+                "description": "Description of the data subject.",
+                "data_type": "string",
+                "examples": ["Student Enrollment"]
+                },
+                "Key_SRGT_Offered_Campus": {
+                "description": "Identifier for the offered campus.",
+                "data_type": "string",
+                "examples": ["2831"]
+                },
+                "Offered_Campus_Business_Key_Code": {
+                "description": "Business key code for the offered campus.",
+                "data_type": "string",
+                "examples": ["ADVETI-ADH"]
+                },
+                "Offered_Authority": {
+                "description": "Authority responsible for the offered campus.",
+                "data_type": "string",
+                "examples": ["ADVETI"]
+                },
+                "Offered_Entity": {
+                "description": "Entity responsible for the offered campus.",
+                "data_type": "string",
+                "examples": ["ADVETI"]
+                },
+                "Offered_Campus_Code": {
+                "description": "Code for the offered campus.",
+                "data_type": "string",
+                "examples": ["ADH"]
+                },
+                "Offered_Campus": {
+                "description": "Name of the offered campus.",
+                "data_type": "string",
+                "examples": ["Al Jazirah Institute - Rabdan"]
+                }
+            }
+        }
+    },
+    "schools students behaviour": {
+        "ss_behaviour_map_student": {
+            "description": "The table represents student data for schools. It includes unique identifiers for each student and their corresponding key codes. This structured information helps in managing and tracking student records across different table.",
+            "columns": {
+                "Key_SRGT_Student": {
+                    "description": "Unique identifier for the student",
+                    "data_type": "bigint",
+                    "examples": [586018, 592688, 592681, 592682, 592683]
+                },
+                "Student_Key_Code": {
+                    "description": "Unique key code assigned to the student",
+                    "data_type": "string",
+                    "examples": ["Not Happened Yet", "663718591", "671289172", "671290507", "671294129"]
+                }
+            }
+        }
+    },
+    "graduates and alumni tracking dashboard": {
+        "g_and_a_tracking_dim_academic_term": {
+            "description": "Contains information about academic terms including their codes, names, academic years, and dates.",
+            "columns": {
+                "Key_SRGT_Academic_Term": {
+                    "description": "Unique identifier for the academic term.",
+                    "data_type": "int",
+                    "examples": ["7237", "7245"]
+                },
+                "key_term": {
+                    "description": "Key term identifier.",
+                    "data_type": "int",
+                    "examples": ["7237", "7245"]
+                },
+                "Academic_Term_Business_Key_Code": {
+                    "description": "Business key code for the academic term.",
+                    "data_type": "string",
+                    "examples": ["ADVETI-701311", "FCHS-200930"]
+                },
+                "Term": {
+                    "description": "Name of the academic term.",
+                    "data_type": "string",
+                    "examples": ["CERT 3 Block 1", "Summer 2009 - 2010"]
+                },
+                "Academic_Year": {
+                    "description": "Academic year of the term.",
+                    "data_type": "string",
+                    "examples": ["2012-2013", "2009-2010"]
+                },
+                "Term_Year": {
+                    "description": "Year of the term.",
+                    "data_type": "int",
+                    "examples": ["2013", "2010"]
+                },
+                "Term_Number": {
+                    "description": "Number of the term within the academic year.",
+                    "data_type": "int",
+                    "examples": ["1", "3"]
+                },
+                "Term_Start_Date": {
+                    "description": "Start date of the term.",
+                    "data_type": "date",
+                    "examples": ["9/30/2012", "7/4/2010"]
+                },
+                "Term_End_Date": {
+                    "description": "End date of the term.",
+                    "data_type": "date",
+                    "examples": ["12/20/2012", "7/25/2010"]
+                }
+            }
+        },
+        "g_and_a_traccking_employment":{
+            "description": "Keeps a track about employment and placement condition of the students. It contains data about academic program, academic organizaiton, counts of graduates, salary etc.",
+            "columns":{
+                "Year": {
+                "description": "The year of the record",
+                "data_type": "string",
+                "examples": ["2017", "2020", "2021", "2023"]
+                },
+                "Key_SRGT_Student": {
+                "description": "A unique identifier for each student",
+                "data_type": "string",
+                "examples": ["933224", "997780", "952083"]
+                },
+                "Key_SRGT_Academic_Organization": {
+                "description": "A unique identifier for the academic organization",
+                "data_type": "string",
+                "examples": ["1729", "1809", "1730"]
+                },
+                "Key_SRGT_Academic_Program": {
+                "description": "A unique identifier for the academic program",
+                "data_type": "string",
+                "examples": ["16354", "16555", "16238"]
+                },
+                "Key_SRGT_Academic_Term": {
+                "description": "A unique identifier for the academic term",
+                "data_type": "string",
+                "examples": ["7224", "7513", "7453"]
+                },
+                "Key_SRGT_Employer": {
+                "description": "The employer's identifier",
+                "data_type": "string",
+                "examples": ["7468","7513"]
+                },
+                "GraduationCount": {
+                "description": "The count of students who have graduated",
+                "data_type": "string",
+                "examples": ["1"]
+                },
+                "ExpectedToGraduateCount": {
+                "description": "The count of students expected to graduate",
+                "data_type": "string",
+                "examples": ["0"]
+                },
+                "SurveyCount": {
+                "description": "The count of surveys conducted",
+                "data_type": "string",
+                "examples": ["0", "1"]
+                },
+                "SecureEmployment": {
+                "description": "Indicates if the student has secured employment",
+                "data_type": "string",
+                "examples": ["0", "1"]
+                },
+                "FurtherStudyCount": {
+                "description": "The count of students pursuing further studies",
+                "data_type": "string",
+                "examples": ["0", "1"]
+                },
+                "Graduation_Date": {
+                "description": "The date of graduation",
+                "data_type": "date",
+                "examples": ["5/11/2017", "8/1/2023"]
+                },
+                "NO_OF_EDUCATION_RECORDS": {
+                "description": "The number of education records",
+                "data_type": "string",
+                "examples": ["0"]
+                },
+                "Key_SRGT_Employment_Function": {
+                "description": "Employment function identifier",
+                "data_type": "string",
+                "examples": ["-2"]
+                },
+                "Key_SRGT_Employment_Status": {
+                "description": "Employment status identifier",
+                "data_type": "string",
+                "examples": ["66"]
+                },
+                "MPLMNT_START_DATE": {
+                "description": "Employment start date",
+                "data_type": "date",
+                "examples": ["11/9/2020"]
+                },
+                "ACDPRG_PROGRAM_CODE": {
+                "description": "Academic program code",
+                "data_type": "string",
+                "examples": "null"
+                },
+                "Survey_Flag": {
+                "description": "Indicates if a survey was conducted",
+                "data_type": "string",
+                "examples": ["No","Yes"]
+                },
+                "Employment_Flag": {
+                "description": "Indicates if employment data is available",
+                "data_type": "string",
+                "examples": ["No", "Yes"]
+                },
+                "Is_Employed": {
+                "description": "Indicates if the student is employed",
+                "data_type": "string",
+                "examples": ["No", "Yes"]
+                },
+                "Proceed_Study_Flag": {
+                "description": "Indicates if the student is proceeding with further studies",
+                "data_type": "string",
+                "examples": ["No", "Yes"]
+                },
+                "TransType": {
+                "description": "Transaction type related to employment",
+                "data_type": "string",
+                "examples": ["Employment"]
+                },
+                "JOB_CATEGORY": {
+                "description": "Category of the job",
+                "data_type": "string",
+                "examples": ["NA"]
+                },
+                "GOT_EMPLOYED_PERIOD": {
+                "description": "Period in which the student got employed",
+                "data_type": "string",
+                "examples": ["NA"]
+                },
+                "GOT_EMPLOYED_PERIOD_CATEGORY": {
+                "description": "Category of the employment period",
+                "data_type": "string",
+                "examples": ["NA"]
+                },
+                "SALARY_RANGE": {
+                "description": "Salary range of the employment",
+                "data_type": "string",
+                "examples": ["NA"]
+                },
+                "RELATIVE_MAJOR_JOB": {
+                "description": "Indicates if the job is related to the student's major",
+                "data_type": "string",
+                "examples": ["NA"]
+                },
+                "LastYearTermFlag": {
+                "description": "Indicates if it is the last year/term",
+                "data_type": "string",
+                "examples": ["1"]
+                },
+                "HighestTermFlag": {
+                "description": "Indicates if it is the highest term",
+                "data_type": "string",
+                "examples": ["1"]
+                }
+            }
+        },
+        "g_and_a_traccking_academic_organization": {
+            "description": "Contains details about various academic organizations, including their locations, authorities, and types.",
+            "columns": {
+                "Key_SRGT_Academic_Organization": {
+                    "description": "Unique identifier for the academic organization.",
+                    "data_type": "int",
+                    "examples": [1732, 1759, 1728, 1739, 1748]
+                },
+                "Academic_Organization_Business_Key_Code": {
+                    "description": "Business key code for the academic organization.",
+                    "data_type": "string",
+                    "examples": ["ATHS-ATHS-AIN-G", "STS-STS-AIN-G", "ALHOSN-Al-Hosn-G", "ATHS-ATHS-RAK-B", "ADVETI-FAJ"]
+                },
+                "Authority": {
+                    "description": "The authority governing the academic organization.",
+                    "data_type": "string",
+                    "examples": ["IAT", "ADVETI", "ALHOSN"]
+                },
+                "Entity": {
+                    "description": "The entity type of the academic organization.",
+                    "data_type": "string",
+                    "examples": ["ATHS", "STS", "ALHOSN"]
+                },
+                "Campus_Code": {
+                    "description": "The code representing the specific campus.",
+                    "data_type": "string",
+                    "examples": ["ATHS-AIN-G", "STS-AIN-G", "Al-Hosn-G", "ATHS-RAK-B", "FAJ"]
+                },
+                "Campus_Name_EN": {
+                    "description": "The English name of the campus.",
+                    "data_type": "string",
+                    "examples": ["ATHS Al Ain Girls", "STS Al Ain Girls", "AlHosn Girls", "ATHS Ras Al Khaima Boys", "Fatima College Ajman"]
+                },
+                "Campus_Name_AR": {
+                    "description": "The Arabic name of the campus.",
+                    "data_type": "string",
+                    "examples": ["nan"]
+                },
+                "Campus_City": {
+                    "description": "The city where the campus is located.",
+                    "data_type": "string",
+                    "examples": ["Al Ain", "Ras Al Khaima", "Ajman"]
+                },
+                "Campus_Emirate": {
+                    "description": "The emirate where the campus is located.",
+                    "data_type": "string",
+                    "examples": ["Abu Dhabi", "Ras Al Khaima", "Ajman"]
+                },
+                "Education_Type": {
+                    "description": "The type of education provided by the campus.",
+                    "data_type": "string",
+                    "examples": ["School", "Post-Secondary"]
+                },
+                "Campus_Longitude": {
+                    "description": "The longitude coordinate of the campus.",
+                    "data_type": "float",
+                    "examples": [55.820209, 54.35, 55.96223, 55.548374]
+                },
+                "Campus_Latitude": {
+                    "description": "The latitude coordinate of the campus.",
+                    "data_type": "float",
+                    "examples": [24.13408, 24.48, 25.65673, 25.39325]
+                },
+                "Campus_Long_Lat": {
+                    "description": "The longitude and latitude coordinates of the campus.",
+                    "data_type": "array",
+                    "examples": [[55.820209, 24.134080], [54.350000, 24.480000], [55.962230, 25.656730], [55.548374, 25.393250]]
+                }
+            }
+        },
+        "g_and_a_traccking_student": {
+            "description": "Contains information about students' demographic and identification details.",
+            "columns": {
+                "Key_SRGT_Student": {
+                    "description": "Unique identifier for each student record.",
+                    "data_type": "string",
+                    "examples": ["990343", "1003594", "966622", "944543", "965467"]
+                },
+                "Student_Key_Code": {
+                    "description": "Code assigned to each student for tracking purposes.",
+                    "data_type": "string",
+                    "examples": ["165515", "2015042041", "869443180", "20706299", "662533266"]
+                },
+                "Student_Name_AR": {
+                    "description": "Student's name in Arabic.",
+                    "data_type": "string",
+                    "examples": ["ريم سليم صالح يسلم الكثيري", "غيث عبدالناصر على سالم العلوي", "مريم سعيد حارب مفتاح النيادي", "على سلطان عبدالله راشد الحبسى", "سالم سليمان على عيسى الريامي"]
+                },
+                "Student_Name_EN": {
+                    "description": "Student's name in English.",
+                    "data_type": "string",
+                    "examples": ["Reem Saleem Saleh Yaslam Alkatheeri", "Ghaith Abdulnasser Ali Salem Alalawi", "Mariam Saeed Hareb Muftah Alneyadi", "Ali Sultan Abdulla Rashad Alhebsi", "Salem Sulaiman Ali Eissa Alriyami"]
+                },
+                "Is_National_Student": {
+                    "description": "Indicates if the student is a national.",
+                    "data_type": "string",
+                    "examples": ["1"]
+                },
+                "Is_National_Mother_Student": {
+                    "description": "Indicates if the student has a national mother.",
+                    "data_type": "string",
+                    "examples": ["No"]
+                },
+                "Is_GCC_Student": {
+                    "description": "Indicates if the student is from a GCC country.",
+                    "data_type": "string",
+                    "examples": ["1"]
+                },
+                "Is_Expat_Student": {
+                    "description": "Indicates if the student is an expatriate.",
+                    "data_type": "string",
+                    "examples": ["No"]
+                },
+                "Student_Nationality": {
+                    "description": "The nationality of the student.",
+                    "data_type": "string",
+                    "examples": ["United Arab Emirates"]
+                },
+                "Nationality_Group": {
+                    "description": "Group classification of the student's nationality.",
+                    "data_type": "string",
+                    "examples": ["Expat"]
+                },
+                "Student_Date_of_Birth": {
+                    "description": "The date of birth of the student.",
+                    "data_type": "string",
+                    "examples": ["4/14/2006", "2/8/2010", "9/20/2005", "5/1/2003", "6/8/2004"]
+                },
+                "Student_Age": {
+                    "description": "The age of the student.",
+                    "data_type": "string",
+                    "examples": ["-18.16666667", "-14.33333333", "-18.75", "-21.08333333", "-20"]
+                },
+                "Age_Group": {
+                    "description": "The age group classification of the student.",
+                    "data_type": "string",
+                    "examples": ["less than 20"]
+                },
+                "Student_Gender": {
+                    "description": "The gender of the student.",
+                    "data_type": "string",
+                    "examples": ["Female", "Male"]
+                },
+                "Student_Marital_Status": {
+                    "description": "The marital status of the student.",
+                    "data_type": "string",
+                    "examples": ["null"]
+                },
+                "Student_Emirates_ID": {
+                    "description": "The Emirates ID number of the student.",
+                    "data_type": "string",
+                    "examples": ["784201000000000", "784201000000001", "784201000000002", "784201000000003", "784201000000004"]
+                },
+                "Student_Passport_Number": {
+                    "description": "The passport number of the student.",
+                    "data_type": "string",
+                    "examples": ["F61J11679", "LL0298250", "CNRR58646", "FYCY47190", "gr0n13070"]
+                },
+                "Student_Email": {
+                    "description": "The email address of the student.",
+                    "data_type": "string",
+                    "examples": ["null"]
+                },
+                "Student_Telephone": {
+                    "description": "The telephone number of the student.",
+                    "data_type": "string",
+                    "examples": ["null"]
+                },
+                "Student_Mobile": {
+                    "description": "The mobile number of the student.",
+                    "data_type": "string",
+                    "examples": ["null"]
+                },
+                "Student_Address": {
+                    "description": "The address of the student.",
+                    "data_type": "string",
+                    "examples": ["null", "الصاروج7", "البريرات", "ابوظبي"]
+                },
+                "Student_PO_Box": {
+                    "description": "The PO Box of the student.",
+                    "data_type": "string",
+                    "examples": ["null"]
+                },
+                "Student_City": {
+                    "description": "The city of the student.",
+                    "data_type": "string",
+                    "examples": ["AE.001.0001", "AE.002", "AE.001.0002", "AE.007", "null"]
+                },
+                "Student_Emirate": {
+                    "description": "The emirate of the student.",
+                    "data_type": "string",
+                    "examples": ["null", "Ras Al Khaimah", "ABU DHABI"]
+                }
+            }
+        },
+        "g_and_a_traccking_dim_employer": {
+            "description": "Contains information about employers, including unique identifiers, business key codes, names, and industry sectors.",
+            "columns": {
+                "Key_SRGT_Employer": {
+                    "description": "Unique identifier assigned to each employer in the dataset.",
+                    "data_type": "int",
+                    "examples": ["16735", "16809", "16818", "17185", "16873"]
+                },
+                "Employer_Business_Key_Code": {
+                    "description": "Business key code associated with each employer for internal reference.",
+                    "data_type": "int",
+                    "examples": ["62068", "62143", "62207", "59470", "62094"]
+                },
+                "Employer_Name": {
+                    "description": "Official name of the employer or organization.",
+                    "data_type": "string",
+                    "examples": ["Al Ain General Cont. Co. L.L.C Abu Dhabi", "BANIYAS SPIKE TRADING COMPANY LLC", "Ruler's Representative Court - Al Dhafrah Region", "Sharjah Authority", "AL Dhabi Contracting LLC"]
+                },
+                "Employer_Industry": {
+                    "description": "Industry sector to which the employer belongs. May contain 'nan' if the information is not available.",
+                    "data_type": "string",
+                    "examples": ["nan"]
+                }
+            }
+        },
+        "g_and_a_traccking_academic_program": {
+            "description": "Contains academic program information including program codes, names, majors, levels, degrees, and specializations.",
+            "columns": {
+                "Key_SRGT_Academic_Program": {
+                    "description": "Unique identifier for each academic program entry.",
+                    "data_type": "int",
+                    "examples": ["15894", "16339", "16552", "15838", "16238"]
+                },
+                "Academic_Program_Business_Key_Code": {
+                    "description": "Business key code for the academic program.",
+                    "data_type": "string",
+                    "examples": ["FCHS-BPT 5000-BPT 5000-UN", "ADPOLY-DGHQ - AVN-DGHQ - AVN-EX", "ADVETI-D5ELCTN2120-D5ELCTN2120-L5", "ADVETI-MMD-DP-D-MMD-DP-D-DP", "ADVETI-MET-DP-L5-MET-DP-L5-L5"]
+                },
+                "Program_Code": {
+                    "description": "Code identifying the program.",
+                    "data_type": "string",
+                    "examples": ["BPT 5000", "DGHQ - AVN", "D5ELCTN2120", "MMD-DP-D", "MET-DP-L5"]
+                },
+                "Program_Name": {
+                    "description": "Name of the academic program.",
+                    "data_type": "string",
+                    "examples": ["Physiotherapy", "GHQ- Diploma in AM", "Diploma in Electronic EngrTech", "Diploma of Info Tech (MMD)", "Diploma in Mech Engr Techology"]
+                },
+                "Program_Major_Code": {
+                    "description": "Code identifying the major within the program.",
+                    "data_type": "string",
+                    "examples": ["BPT 5000", "DGHQ - AVN", "D5ELCTN2120", "MMD-DP-D", "MET-DP-L5"]
+                },
+                "Program_Major_Name": {
+                    "description": "Name of the major within the program.",
+                    "data_type": "string",
+                    "examples": ["Physiotherapy", "GHQ- Diploma in AM", "Diploma in Electronic EngrTech", "Diploma of Info Tech (MMD)", "Diploma in Mech Engr Techology"]
+                },
+                "Program_Level_Code": {
+                    "description": "Code identifying the level of the program.",
+                    "data_type": "string",
+                    "examples": ["UN", "EX", "L5", "DP", "L5"]
+                },
+                "Program_Level_Name": {
+                    "description": "Name of the level of the program.",
+                    "data_type": "string",
+                    "examples": ["Undergraduate-New Level", "External Level", "Diploma", "Diploma", "Diploma"]
+                },
+                "Degree_Code": {
+                    "description": "Code identifying the degree type.",
+                    "data_type": "string",
+                    "examples": ["B.PHYS", "ND", "DIP", "DIP", "DIP"]
+                },
+                "Degree_Name": {
+                    "description": "Name of the degree.",
+                    "data_type": "string",
+                    "examples": ["Bachelor of Physiotherapy", "Diploma", "Diploma", "Diploma", "Diploma"]
+                },
+                "Program_Credit_Hours_Standard": {
+                    "description": "Standard number of credit hours for the program.",
+                    "data_type": "string",
+                    "examples": ["", "", "", "", ""]
+                },
+                "Program_Group": {
+                    "description": "Group classification of the program.",
+                    "data_type": "string",
+                    "examples": ["Medical /Health and Science", "Engineering", "Engineering", "IT", "Engineering"]
+                },
+                "Specialization": {
+                    "description": "Specialization within the program, if applicable.",
+                    "data_type": "string",
+                    "examples": ["Scientific", "Scientific", "Scientific", "Scientific", "Scientific"]
+                },
+                "Is_NQA": {
+                    "description": "Indicator if the program is accredited or recognized by the National Qualifications Authority.",
+                    "data_type": "string",
+                    "examples": ["N", "N", "Y", "N", "Y"]
+                }
+            }
+        },
+        "g_and_a_traccking_employmentfunction": {
+            "description": "Contains information about employment functions and their corresponding codes.",
+            "columns": {
+                "Key_SRGT_Employment_Function": {
+                    "description": "Unique identifier for each employment function entry.",
+                    "data_type": "int",
+                    "examples": ["131", "607", "865", "1027", "1830"]
+                },
+                "Employment_Function_Business_Key_Code": {
+                    "description": "Business key code associated with the employment function.",
+                    "data_type": "string",
+                    "examples": ["Assistant", "Graduate trainee - customer service", "Mechanical Engineer - Looking for better opportunities", "petreloum engeneerin", "مشرف إداري"]
+                },
+                "Employment_Function": {
+                    "description": "Descriptive name of the employment function.",
+                    "data_type": "string",
+                    "examples": ["Administrative", "Graduate trainee - customer service", "Mechanical Engineer - Looking for better opportunities", "petreloum engeneerin", "مشرف إداري"]
+                }
+            }
+        },
+        "g_and_a_traccking_employmentstatus": {
+            "description": "Contains information about employment statuses.",
+            "columns": {
+                "Key_SRGT_Employment_Status": {
+                    "description": "Key identifier for employment status.",
+                    "data_type": "int",
+                    "examples": ["31", "21", "51", "16", "42"]
+                },
+                "Employment_Status_Business_Key_Code": {
+                    "description": "Business key code for employment status.",
+                    "data_type": "string",
+                    "examples": ["Deceased", "M", "ADPOLY-E", "Not contacted", "J"]
+                },
+                "Employment_Status": {
+                    "description": "Detailed employment status.",
+                    "data_type": "string",
+                    "examples": ["Deceased", "Not Looking-Military Service", "Self-Employed", "Not contacted", "Not looking for job"]
+                },
+                "Employment_Category": {
+                    "description": "Category of employment status.",
+                    "data_type": "string",
+                    "examples": ["nan", "Not Available for Employment", "Employed"]
+                },
+                "ExcludedFromEmployment": {
+                    "description": "Indicates if excluded from employment.",
+                    "data_type": "string",
+                    "examples": ["Yes", "Yes", "No", "Yes", "Yes"]
+                }
+            }
+        }
+    },
+    "schools admission dashboard": {
+        "psa_institutes_admission_data": {
+            "description": "The table contains information about applicants, including their application ID, full names in both English and Arabic, type of application, institute codes, programs applied for, gender, application status, high school streams, campus locations, and institute names. The data encompasses various institutes, programs, and high school backgrounds, providing a comprehensive overview of the applicants' educational choices and statuses.",
+            "columns": {
+                "App_ID": {
+                  "description": "A unique identifier for the application.",
+                  "data_type": "string",
+                  "examples": ["ADVETI202300255", "ADVETI202300181", "ADVETI202300659", "ADPOLY202300098", "ADVETI202300365"]
+                },
+                "Full_Name_EN": {
+                  "description": "Full name of the applicant in English.",
+                  "data_type": "string",
+                  "examples": ["ABDULLAH  SAEED MOHAMMED  AL JABRI", "SALMA NASSER SALEM ALAMERI", "AMNA HAMED IBRAHIM ALSHEHHI", "MOUZA MOHAMMED ALI ALSAEDI", "HANEEN HUMAID MUBARAK MUBARAK"]
+                },
+                "Full_Name_AR": {
+                  "description": "Full name of the applicant in Arabic (encoded).",
+                  "data_type": "string",
+                  "examples": ["هدى عبد العزيز اسحاق العوضي", "سُرى إبراهيم موسى عريقات", "سلامه علي سعد القحطاني", "امنه عبدالله  البلوشي البلوشي", "امنه محمد إبراهيم الشحي" ]
+                },
+                "App_Type": {
+                  "description": "Type of application submitted by the applicant.",
+                  "data_type": "string",
+                  "examples": ["N/A", "NAPO Applicant", "Direct or New In-take", "Transfer Applicant", "Bridging Students"]
+                },
+                "Institute_Code": {
+                  "description": "Code representing the institute the applicant applied to.",
+                  "data_type": "string",
+                  "examples": ["ADPOLY-AUH", "ADVETI-ADH", "FCHS-AUH", "ADVETI-ALN", "FCHS-AIN"]
+                },
+                "Program": {
+                  "description": "Program or course the applicant applied for.",
+                  "data_type": "string",
+                  "examples": ["N/A", "Bachelor of Science in Nursing", "Electromechanical System Engineering Technology", "Diploma in Health Care Assistant", "Information Security Engineering Technology"]
+                },
+                "Gender": {
+                  "description": "Gender of the applicant.",
+                  "data_type": "string",
+                  "examples": ["F", "M"]
+                },
+                "Status": {
+                  "description": "Current status of the application.",
+                  "data_type": "string",
+                  "examples": ["Registered"]
+                },
+                "HS_Stream": {
+                  "description": "High school stream or track the applicant followed.",
+                  "data_type": "string",
+                  "examples": ["General/العام", "Advanced/المتقدم", "American System", "ATHS-General Cluster/التقني العام/  ثانويات التكنولوجيا التطبيقي", "ATHS-Advanced Clusters/ني المتقدم/ ثانويات التكنولوجيا  التطبيقية"
+                  ]
+                },
+                "Campus": {
+                  "description": "Campus where the applicant will be studying.",
+                  "data_type": "string",
+                  "examples": ["AD Polytechnic Abu Dhabi", "Al Jazirah Institute", "Fatima College Abu Dhabi", "Al Jaheli Institute", "Fatima College Al Ain"]
+                },
+                "Institute_Name": {
+                  "description": "Name of the institute the applicant applied to.",
+                  "data_type": "string",
+                  "examples": ["ADVETI", "FCHS", "ADPOLY"]
+                }
+            }
+        }
+    },
+    "schools students satisfaction": {
+        "school_students_survey":{
+            "description": "",
+            "columns": {
+                "ResponseNo": {
+                  "description": "A unique identifier for each survey response.",
+                  "data_type": "string",
+                  "examples": ["1", "210", "286", "285", "284"]
+                },
+                "Answer": {
+                  "description": "The rating given by the respondent for a particular question.",
+                  "data_type": "string",
+                  "examples": ["Very Good", "Good", "Acceptable", "Very Poor", "Poor"]
+                },
+                "Row_No": {
+                  "description": "The row number in the dataset.",
+                  "data_type": "string",
+                  "examples": ["1", "6654", "6655", "6667", "6665"]
+                },
+                "Date": {
+                  "description": "The date when the survey response was recorded.",
+                  "data_type": "string",
+                  "examples": ["2019-06-16"]
+                },
+                "Year": {
+                  "description": "The year the survey response was recorded.",
+                  "data_type": "string",
+                  "examples": ["2019"]
+                },
+                "Campus": {
+                  "description": "The campus where the survey was conducted.",
+                  "data_type": "string",
+                  "examples": ["Al Ain AQB Campus", "Al Ain TBMEC Campus", "Abu Dhabi Girls Campus", "Abu Dhabi Boys Campus", "Baynunah Campus"]
+                },
+                "Entity": {
+                  "description": "The entity conducting the survey.",
+                  "data_type": "string",
+                  "examples": ["ATS", "STS"]
+                },
+                "Gender": {
+                  "description": "The gender of the respondent.",
+                  "data_type": "string",
+                  "examples": ["Female", "Male", "nan"]
+                },
+                "Grade": {
+                  "description": "The grade level of the respondent.",
+                  "data_type": "string",
+                  "examples": ["Grade 9", "Grade 8", "Grade 7", "Grade 11", "Grade 10", "Grade 6", "Grade 12"]
+                },
+                "Question": {
+                  "description": "The specific aspect of the educational experience or campus environment being rated.",
+                  "data_type": "string",
+                  "examples": ["Laboratories / Workshops", "Students clubs", "Textbooks/ Library resources", "Teachers’ use of different teaching styles to meet the needs of a wide range of students", "Teaching and learning relevant to the real world using practical problems and projects"]
+                },
+                "Category": {
+                  "description": "The category of the question.",
+                  "data_type": "string",
+                  "examples": ["Educational Experience", "Campus Environment and Services", "Learning Resources and Facilities"]
+                },
+                "Question_Full_Text": {
+                  "description": "The full text of the question being rated.",
+                  "data_type": "string",
+                  "examples": ["C1. How would rate the following learning resources/facilities at your campus:  [Laboratories / Workshops]",
+                  "D1. How would rate the Campus Environment and Services at your campus:  [Students clubs]",
+                  "C1. How would rate the following learning resources/facilities at your campus:  [Textbooks/ Library resources]",
+                  "B1. How would you rate the following aspects of your educational experience?  [Teachers’ use of different teaching styles to meet the needs of a wide range of students]",
+                  "B1. How would you rate the following aspects of your educational experience?  [Teaching and learning relevant to the real world using practical problems and projects]"]
+                },
+                "ResponseCount": {
+                  "description": "The count of responses for a particular question.",
+                  "data_type": "string",
+                  "examples": ["1"]
+                },
+                "AnswerScore": {
+                  "description": "The score assigned to the answer.",
+                  "data_type": "string",
+                  "examples": ["1.0", "0.8", "0.6", "0.2", "0.4"]
+                },
+                "Survey_Result": {
+                  "description": "The result of the survey calculated based on the responses.",
+                  "data_type": "string",
+                  "examples": ["1.0", "0.2", "0.6", "0.825", "0.79166667"]
+                }
+            }
+        },
+        "questionorder_schoolstudentssatisfaction": {
+            "description": "Data consists of questions and their corresponding order for school student satisfaction surveys.",
+            "columns": {
+                "Question": {
+                    "description": "The text of the survey question asked to students.",
+                    "data_type": "string",
+                    "examples": [
+                        "Feedback and encouragement provided from teachers after assessments",
+                        "School encouragement in community involvement, volunteering and social contribution",
+                        "Teachers use of time and resources in the classroom"
+                    ]
+                },
+                "Question_Order": {
+                    "description": "The numerical order in which the question appears in the survey.",
+                    "data_type": "int",
+                    "examples": [
+                        "9",
+                        "22",
+                        "3"
+                    ]
+                }
+            }
+        },
+        "answerslookup_schoolstudentssatisfaction": {
+            "description": "Table containing the satisfaction levels of school students",
+            "Answer": {
+                "description": "The satisfaction rating provided by the students",
+                "data_type": "string",
+                "examples": ["Very Poor", "Poor", "Acceptable", "Good", "Very Good"]
+            },
+            "Answer_Order": {
+                "description": "The order of the satisfaction ratings from best to worst",
+                "data_type": "string",
+                "examples": ["1", "2", "3", "4", "5"]
+            }
+        }
+    },
+    "schools alumni": {
+        "schoolsalumni_alumni": {
+            "description": "This table contains detailed information about students, including their academic records, personal identifiers, contact details, and post-graduation plans. Each entry provides a comprehensive snapshot of a student's journey, from their high school performance to their approved institutions for further education or employment. This data is crucial for tracking student progress and outcomes.",
+            "columns": {
+                "All": {
+                    "description": "A unique identifier for all entries, possibly a serial number.",
+                    "data_type": "string",
+                    "examples": ["1", "6672", "6665", "6666", "6667"]
+                },
+                "S": {
+                    "description": "An identifier related to the specific subset or category of data.",
+                    "data_type": "string",
+                    "examples": ["1", "714", "700", "701", "702"]
+                },
+                "AY": {
+                    "description": "The academic year.",
+                    "data_type": "string",
+                    "examples": ["2016-2017", "2017-2018", "2019-2020", "2021-2022", "2020-2021"]
+                },
+                "Entity": {
+                    "description": "The institution or entity associated with the entry.",
+                    "data_type": "string",
+                    "examples": ["ATHS", "STS"]
+                },
+                "Emirate": {
+                    "description": "The emirate associated with the entry, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", "AUH", "AJM", "DXB", "RAK", "FUJ", "UAQ", "SHJ"]
+                },
+                "Gender": {
+                    "description": "The gender of the student.",
+                    "data_type": "string",
+                    "examples": ["Male", "Female"]
+                },
+                "Campus": {
+                    "description": "The campus associated with the entry.",
+                    "data_type": "string",
+                    "examples": ["ATHS-AUH-B", "ATHS-AUH-G", "ATHS-AIN-G-AQB", "ATHS-AJM-G", "ATHS-RAK-B"]
+                },
+                "Student_ID": {
+                    "description": "The unique student identification number.",
+                    "data_type": "string",
+                    "examples": ["1011130176", "663014946", "869687860", "662677328", "663009555"]
+                },
+                "NAME_ARB": {
+                    "description": "The name of the student in Arabic.",
+                    "data_type": "string",
+                    "examples": ["فاطمه احمد حسن عبدالله الحمادي", "على ناصر على حسن البلوشي", "احمد سالم عبدالله محمد الكعبي", "أحمد خليفه سالم الغفلي", "مريم محمد سيف عبدالله النيادي"]
+                },
+                "NAME_ENG": {
+                    "description": "The name of the student in English.",
+                    "data_type": "string",
+                    "examples": ["Ali Hassan Ali Hassan Alhosani", "Mohammed Ali Mohammed Ali Alshehhi", "Ahmed Salem Abdulla Mohammed Alkaabi", "Ahmed Khalifa Salem Al Ghafli", "MOUZA SALEM KHALFAN SULAIMAN ALHARRASI"]
+                },
+                "Stream": {
+                    "description": "The academic stream of the student.",
+                    "data_type": "string",
+                    "examples": ["Advanced", "General", "ASP"]
+                },
+                "Homeroom": {
+                    "description": "The homeroom designation for the student.",
+                    "data_type": "string",
+                    "examples": ["A12[ENI]/1", "A12[ASP]/1", "A12[ENI]/51", "A12[CAI] [ENI]/1", "A12[AET]/1"]
+                },
+                "Nationality": {
+                    "description": "The nationality of the student.",
+                    "data_type": "string",
+                    "examples": ["UAE", "Yemen", "Oman", "OMAN", "Comoros"]
+                },
+                "Branch": {
+                    "description": "The academic branch or department.",
+                    "data_type": "string",
+                    "examples": ["ENI", "AEM", "ASP", "AEE", "ESG"]
+                },
+                "ClusterE": {
+                    "description": "The English name of the academic cluster.",
+                    "data_type": "string",
+                    "examples": ["Engineering and Innovation", "Applied Engineering – Mechanical", "Advanced Science Program", "Applied Engineering – Electrical", "Engineering Science – General"]
+                },
+                "ClusterA": {
+                    "description": "The Arabic name of the academic cluster.",
+                    "data_type": "string",
+                    "examples": ["الهندسة والابتكار", "الهندسة التطبيقية - ميكانيك", "برنامج العلوم المتقدمة", "الهندسة التّطبيقيّة - كهرباء", "العلوم الهندسية - عام"]
+                },
+                "CP": {
+                    "description": "The cumulative performance score of the student, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", "90.0", "80.0", "83.0", "88.0"]
+                },
+                "EID": {
+                    "description": "The Emirates ID number of the student.",
+                    "data_type": "string",
+                    "examples": ["784200125350304", "784200147076408", "784200218353108", "784200143291704", "784200364916377"]
+                },
+                "Messaging_Phone_Number": {
+                    "description": "The phone number for messaging, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", "\\xa0", "050-6266908 الوالدة , 050-6343126 الوالد", "0509992913,0506677942", "0505103979,0507668789,0506608580"]
+                },
+                "Application_No": {
+                    "description": "The application number for the student's entry.",
+                    "data_type": "string",
+                    "examples": ["nan", "201806930", "202002276", "201706314", "201905025"]
+                },
+                "NAPO_NAME_A": {
+                    "description": "The NAPO name in Arabic.",
+                    "data_type": "string",
+                    "examples": ["nan", "احمد خليفه سالم محمد الغفلي", "زينب عمار سالم عبدربه اليافعي", "مريم عبدالرحمن محمدغلوم البلوشي", "امنه يحيى محمد قمبر البناي"]
+                },
+                "APPROVED_INST": {
+                    "description": "The approved institution for the student's next phase.",
+                    "data_type": "string",
+                    "examples": ["Internal", "nan", "National Service ", "Abroad", "Work"]
+                },
+                "APPROVED_INST_Original": {
+                    "description": "The original approved institution.",
+                    "data_type": "string",
+                    "examples": ["Internal", "nan", "National Service ", "ABROAD", "Not Reachable"]
+                },
+                "Direct_Entry_or_Foundation_": {
+                    "description": "Indicates whether the student is on a direct entry or foundation path.",
+                    "data_type": "string",
+                    "examples": ["Direct Entry", "nan", "Foundation"]
+                },
+                "Direct_Entry_or_Foundation_Original": {
+                    "description": "The original direct entry or foundation status.",
+                    "data_type": "string",
+                    "examples": ["Direct Entry", "nan", "Foundation", "Pending", "Direct entry\\xa0"]
+                },
+                "Country": {
+                    "description": "The country associated with the approved institution.",
+                    "data_type": "string",
+                    "examples": ["UAE", "nan", "Not Reachable", "UK", "USA"]
+                },
+                "Approved_Institute": {
+                    "description": "The specific approved institution for the student.",
+                    "data_type": "string",
+                    "examples": ["nan", "HCT", "UAEU", "KU", "ZU"]
+                },
+                "Faculity_": {
+                    "description": "The faculty or department within the approved institution.",
+                    "data_type": "string",
+                    "examples": ["nan", "Engineering", "CS", "Sciences", "Financial studies"]
+                },
+                "Major": {
+                    "description": "The major or field of study within the approved institution.",
+                    "data_type": "string",
+                    "examples": ["nan", "Engineering", "Not Reachable", "Mechanical Engineering", "Electrical Engineering"]
+                },
+                "EMSAT_E": {
+                    "description": "The EMSAT score of the student, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", "1400", "1100", "1300", "1550"]
+                },
+                "Top_10_": {
+                    "description": "Indicates if the student is in the top 10, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", "\\xa0", "7", "No", "6"]
+                },
+                "Student_phone_": {
+                    "description": "The phone number of the student, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", "0", "call him again ", "Call him again ", "CAN'T REACH THE STUDENT"]
+                },
+                "Extra_Contact_": {
+                    "description": "Extra contact information, 'nan' indicates missing data.",
+                    "data_type": "string",
+                    "examples": ["nan", " -  -  -  -  - ", "0", "- - - - -", "still in National services "]
+                },
+                "Extra_info": {
+                    "description": "Additional information about the student.",
+                    "data_type": "string",
+                    "examples": ["Direct entry", "nan", " Foundation entry", "Not reachable", "Foundation "]
+                },
+                "Unnamed_34": {
+                    "description": "An unnamed column with no description.",
+                    "data_type": "string",
+                    "examples": ["nan", "abdullahmarhoon66@gmail.com", "jasirah "]
+                
+                }
+            }
+        }
+    },
+    "digital transformation dashboard": {
+        "digital_transformation_revenue": {
+        "description": "Contains revenue details related to digital transformation activities, including invoice and payment statuses.",
+        "columns": {
+            "RevenueKey": {
+                "description": "Unique identifier for the revenue record.",
+                "data_type": "string",
+                "examples": ["ACT - 12434_7643", "ACT - 12976_7684"]
+            },
+            "RequestID": {
+                "description": "Identifier for the request associated with the revenue.",
+                "data_type": "string",
+                "examples": ["ACT - 12434", "ACT - 12976"]
+            },
+            "InvoiceNumber": {
+                "description": "Unique number for the invoice issued.",
+                "data_type": "string",
+                "examples": ["INV - 2744", "INV - 2927"]
+            },
+            "PaymentNumber": {
+                "description": "Unique number for the payment made.",
+                "data_type": "string",
+                "examples": ["PAY - 2069", "PAY - 2193"]
+            },
+            "InstituteID": {
+                "description": "Identifier for the institute involved in the transaction.",
+                "data_type": "string",
+                "examples": ["2CF90893-BC5B-E711-80CF-005056AA4203", "B9439F44-DFB1-E911-80CC-0050560100D8"]
+            },
+            "InvoiceStatus": {
+                "description": "Status of the invoice.",
+                "data_type": "string",
+                "examples": ["Paid"]
+            },
+            "PaymentStatus": {
+                "description": "Status of the payment.",
+                "data_type": "string",
+                "examples": ["Paid"]
+            },
+            "Payment_Date": {
+                "description": "Date when the payment was made.",
+                "data_type": "date",
+                "examples": ["12/5/2019", "1/15/2020"]
+            },
+            "Total_Amount": {
+                "description": "Total amount for the invoice.",
+                "data_type": "float",
+                "examples": [3000, 500]
+            },
+            "TaxAmount": {
+                "description": "Tax amount included in the total amount.",
+                "data_type": "float",
+                "examples": [150, 25]
+            }
+        }
+        },
+        "digital_transformation_institutions": {
+            "description": "Contains information about institutions involved in digital transformation, including their IDs, names, phone numbers, and email addresses.",
+            "columns": {
+                "InstituteID": {
+                    "description": "Unique identifier for the institute.",
+                    "data_type": "string",
+                    "examples": ["79d15682-0829-e911-80d4-005056aa7d1d", "fd6a3033-8c55-ec11-b82c-005056010213"]
+                },
+                "Institute_Name": {
+                    "description": "Name of the institute.",
+                    "data_type": "string",
+                    "examples": [
+                        "Smart Technology For Training Institute - Sole Proprietorship L.L.C.",
+                        "ATOM TRAINING AND CONSULTANCY INSTITUTE - SOLE PROPRIETORSHIP L.L.C."
+                    ]
+                },
+                "Phone": {
+                    "description": "Phone number of the institute.",
+                    "data_type": "string",
+                    "examples": ["03-7847673", "97137679161"]
+                },
+                "Email": {
+                    "description": "Email address of the institute.",
+                    "data_type": "string",
+                    "examples": ["(09072021)-smarttechnologies2050@hotmail.com", "RAEDLIKE@GMAIL.COM"]
+                }
+            }
+        },
+        "digial_transformation_actvet_services": {
+            "description": "This table stores and manages data related to various services offered under a digital transformation initiative. It includes detailed information about each service, its collection methods, channels, transaction statistics, and user satisfaction ratings.",
+            "columns": {
+            "Service_Code": {
+                "description": "A unique identifier for each service.",
+                "data_type": "string",
+                "examples": ["ACTVET-001","ACTVET-004"]
+            },
+            "Service_Name_AR": {
+                "description": "The name of the service in Arabic.",
+                "data_type": "String",
+                "examples": ["تجديد رخصة تدريب","تغيير المالك / الشريك"]
+            },
+            "Service_Name_ENG": {
+                "description": "The name of the service in English.",
+                "data_type": "String",
+                "examples": ["Renew Training Licence","Change of Academic Director"]
+            },
+            "Service_Description_AR": {
+                "description": "A description of the service in Arabic.",
+                "data_type": "String",
+                "examples": ["تهدف هذه الخدمة الرئيسية إلى تمكين المتعامل من إصدار رخصة تدريب وذلك بعد إستيفائه كافة متطلبات الحصول على الخدمة."]
+            },
+            "Service_Description_ENG": {
+                "description": "A description of the service in English.",
+                "data_type": "String",
+                "examples": ["This main service is designed to allow a Customer to Renew Training License after it meets all the requirements."]
+            },
+            "Beneficiary": {
+                "description": "The target audience or beneficiaries of the service.",
+                "data_type": "String",
+                "examples": ["G2B-G2G"]
+            },
+            "Traditional_Collection": {
+                "description": "Indicates whether the service is collected through traditional methods.",
+                "data_type": "string",
+                "examples": ["0"]
+            },
+            "Digital_Collection": {
+                "description": "Indicates whether the service is collected through digital methods.",
+                "data_type": "float",
+                "examples": [156510.17, 23500]
+            },
+            "Traditional_Channels": {
+                "description": "Indicates whether the service is available through traditional channels.",
+                "data_type": "string",
+                "examples": ["nan"]
+            },
+            "Call_Center": {
+                "description": "Indicates whether the service is available through a call center.",
+                "data_type": "string",
+                "examples": ["nan"]
+            },
+            "EService": {
+                "description": "Indicates whether the service is available as an electronic service (e-service).",
+                "data_type": "string",
+                "examples": ["Yes"]
+
+            },
+            "Smart_Service": {
+                "description": "Indicates whether the service is available as a smart service.",
+                "data_type": "string",
+                "examples":["Yes", "nan"]
+            },
+            "IsTransformable": {
+                "description": "Indicates whether the service is transformable.",
+                "data_type": "int",
+                "examples": [1,0]
+            },
+            "NotYetTransformed": {
+                "description": "Indicates whether the service has not yet been transformed.",
+                "data_type": "int",
+                "examples": [0]
+            },
+            "Transformed": {
+                "description": "Indicates whether the service has been transformed.",
+                "data_type": "int",
+                "examples": [1,0]
+            },
+            "Interactive_Kiosk": {
+                "description": "Indicates whether the service is available through an interactive kiosk.",
+                "data_type": "string",
+                "examples": ["nan"]
+            },
+            "Auto_Answer": {
+                "description": "Indicates whether the service has an automatic answering feature.",
+                "data_type": "string",
+                "examples": ["nan"]
+            },
+            "Traditional_Channels_Transactions": {
+                "description": "The number of transactions conducted through traditional channels.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Call_Center_Transactions": {
+                "description": "The number of transactions conducted through the call center.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "EServices_Transactions": {
+                "description": "The number of transactions conducted through electronic services.",
+                "data_type": "int",
+                "examples":[10,14]
+            },
+            "Smart_Services_Transactions": {
+                "description": "The number of transactions conducted through smart services.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Interactive_Kiosk_Transactions": {
+                "description": "The number of transactions conducted through interactive kiosks.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Auto_Answer_Transactions": {
+                "description": "The number of transactions conducted through automatic answering systems.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Avg_Satisfaction_Traditional_Channels": {
+                "description": "The average satisfaction rating for traditional channels.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Avg_Satisfaction_EServices": {
+                "description": "The average satisfaction rating for electronic services.",
+                "data_type": "float",
+                "examples": [0.95,0.88]
+            },
+            "Avg_Satisfaction_Smart_Services": {
+                "description": "The average satisfaction rating for smart services.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Avg_Satisfaction_Interactive_Kiosk": {
+                "description": "The average satisfaction rating for interactive kiosks.",
+                "data_type": "int",
+                "examples":[0]
+            },
+            "Avg_Satisfaction_Auto_Answer": {
+                "description": "The average satisfaction rating for automatic answering systems.",
+                "data_type": "int",
+                "examples":[0]
+            }
+            }
+        },
+        "digital_transformationparameters": {
+            "description": "Parameters related to digital transformation initiatives.",
+            "columns": {
+                "Parameter": {
+                    "description": "Name of the parameter.",
+                    "data_type": "string",
+                    "examples": [
+                        "Number of visit to be reduced per transaction",
+                        "Average time in each visit",
+                        "Average time for round trip to the entity visit",
+                        "Fuel cost",
+                        "Average salary for customer per hour (time cost)"
+                    ]
+                },
+                "Value": {
+                    "description": "Value associated with the parameter.",
+                    "data_type": "float",
+                    "examples": [2, 0.5, 1, 5, 87]
+                }
+            }
+        },
+        "linktable_digitaltransformationdashboard": {
+            "description": "Contains information about digital transformation requests, including various date formats, quarter information, and transaction types.",
+            "columns": {
+                "RevenueKey": {
+                    "description": "Key identifier for revenue, if applicable.",
+                    "data_type": "string",
+                    "examples": ["null"]
+                },
+                "RequestID": {
+                    "description": "Unique identifier for each request.",
+                    "data_type": "string",
+                    "examples": ["ACT - 6382", "ACT - 6870", "ACT - 2698", "ACT - 0166", "ACT - 7947"]
+                },
+                "InstituteID": {
+                    "description": "Unique identifier for the institute.",
+                    "data_type": "string",
+                    "examples": ["DC0706AB-4059-E611-80C5-005056AA4203", "67E1DA2C-EE54-E711-80CF-005056AA4203", "0996A86A-23AB-E611-80BF-005056AA7D1D", "E64F9A1D-84D5-E611-80C0-005056AA7D1D"]
+                },
+                "Date": {
+                    "description": "Date of the request.",
+                    "data_type": "date",
+                    "examples": ["11-12-2018", "08-01-2019", "12-03-2018", "17-01-2017", "04-03-2019"]
+                },
+                "Year": {
+                    "description": "Year of the request.",
+                    "data_type": "int",
+                    "examples": ["2018", "2019", "2017"]
+                },
+                "Month": {
+                    "description": "Month of the request as a number.",
+                    "data_type": "int",
+                    "examples": ["12", "1", "3"]
+                },
+                "Year_Month": {
+                    "description": "Year and month of the request in YYYY-MM format.",
+                    "data_type": "string",
+                    "examples": ["2018-12", "2019-01", "2018-03", "2017-01", "2019-03"]
+                },
+                "Month_Year": {
+                    "description": "Month abbreviation and year of the request.",
+                    "data_type": "string",
+                    "examples": ["Dec-18", "Jan-19", "Mar-18", "Jan-17", "Mar-19"]
+                },
+                "Quarter": {
+                    "description": "Quarter of the year for the request.",
+                    "data_type": "string",
+                    "examples": ["Q4", "Q1"]
+                },
+                "QuarterNo": {
+                    "description": "Numeric representation of the quarter.",
+                    "data_type": "int",
+                    "examples": ["4", "1"]
+                },
+                "QuarterAR": {
+                    "description": "Quarter of the year in Arabic.",
+                    "data_type": "string",
+                    "examples": ["الربع الرابع", "الربع الأول"]
+                },
+                "Quarter_Year": {
+                    "description": "Quarter and year of the request.",
+                    "data_type": "string",
+                    "examples": ["Q4 2018", "Q1 2019", "Q1 2018", "Q1 2017"]
+                },
+                "Year_Quarter": {
+                    "description": "Year and quarter of the request.",
+                    "data_type": "string",
+                    "examples": ["2018-4", "2019-1", "2018-1", "2017-1"]
+                },
+                "TransType": {
+                    "description": "Type of transaction.",
+                    "data_type": "string",
+                    "examples": ["Requests"]
+                }
+            }
+        },
+        "digital_transformation_satisfaction_survey": {
+            "description": "Contains survey data related to digital transformation satisfaction.",
+            "columns": {
+                "RequestID": {
+                    "description": "Unique identifier for each survey request.",
+                    "data_type": "string",
+                    "examples": ["ACT - 23198", "ACT - 3622"]
+                },
+                "InstituteID": {
+                    "description": "Unique identifier for the institute.",
+                    "data_type": "string",
+                    "examples": ["40A6B713-B6D8-E611-80C7-005056AA4203", "2137E86F-5AFE-E611-80C9-005056AA4203"]
+                },
+                "Score": {
+                    "description": "The satisfaction score provided in the survey.",
+                    "data_type": "decimal",
+                    "examples": [100, 75]
+                },
+                "Survey_Score": {
+                    "description": "Overall score of the survey.",
+                    "data_type": "decimal",
+                    "examples": [91.66666667, 75]
+                },
+                "Survey_Date": {
+                    "description": "Date when the survey was conducted.",
+                    "data_type": "date",
+                    "examples": ["2022-02-02", "2018-06-21"]
+                },
+                "Response_Count": {
+                    "description": "The number of responses received for the survey.",
+                    "data_type": "integer",
+                    "examples": [1, 1]
+                },
+                "IncludedInSurveyCalc": {
+                    "description": "Indicates whether the response is included in the survey calculation.",
+                "data_type": "integer",
+                    "examples": [1, 1]
+                }
+            }
+        },
+        "digital_transformation_requests": {
+            "description": "Contains records of various requests made by institutions, detailing the type of request, its status, and other relevant information.",
+            "columns": {
+                "RequestID": {
+                    "description": "Unique identifier for each request.",
+                    "data_type": "string",
+                    "examples": ["ACT - 3956", "ACT - 0987"]
+                },
+                "InstituteID": {
+                    "description": "Unique identifier for each institution making the request.",
+                    "data_type": "string",
+                    "examples": ["3DD2F888-5DF6-E611-80C9-005056AA4203", "2A73E998-2BC8-E611-80BF-005056AA7D1D"]
+                },
+                "Request_Type": {
+                    "description": "Description of the type of request made.",
+                    "data_type": "string",
+                    "examples": ["Modify License - Change Location", "Modify License - Add Activity"]
+                },
+                "RequestType_Code": {
+                    "description": "Unique code representing the type of request.",
+                    "data_type": "string",
+                    "examples": ["14734EDB-D29C-E611-80C0-005056AA3D7E", "10734EDB-D29C-E611-80C0-005056AA3D7E"]
+                },
+                "Request_Date": {
+                    "description": "The date on which the request was made.",
+                    "data_type": "date",
+                    "examples": ["03-07-2018", "11-07-2017"]
+                },
+                "Resolution_Year": {
+                    "description": "The year in which the request was resolved.",
+                    "data_type": "int",
+                    "examples": ["2018", "2017"]
+                },
+                "Request_Origin": {
+                    "description": "The origin of the request, indicating the platform or method used to make the request.",
+                    "data_type": "string",
+                    "examples": ["Portal"]
+                },
+                "Request_Status": {
+                    "description": "The current status of the request.",
+                    "data_type": "string",
+                    "examples": ["Completed", "Canceled"]
+                },
+                "ServiceCount": {
+                    "description": "The count of services associated with the request.",
+                    "data_type": "int",
+                    "examples": ["1"]
+                }
+            }
+        },
+        "digital_transformation_requesttypelookup": {
+            "description": "Lookup table for digital transformation request types.",
+            "columns": {
+                "RequestTypeCode": {
+                    "description": "Unique identifier for the request type.",
+                    "data_type": "string",
+                    "examples": ["{B7AEF4E1-50D3-EB11-B823-005056010213}", "{0A734EDB-D29C-E611-80C0-005056AA3D7E}", "{732098B0-FF4F-E611-80C5-005056AA5A6C}", "{10734EDB-D29C-E611-80C0-005056AA3D7E}", "{14734EDB-D29C-E611-80C0-005056AA3D7E}"]
+                },
+                "RequestTypeAR": {
+                    "description": "Arabic name of the request type.",
+                    "data_type": "string",
+                    "examples": ["طلب تفتيش لشهادة عدم ممانعة", "إلغاء رخصة تدريب", "إصدار شهادة عدم ممانعة لطرح مؤهلات وطنية", "إضافة نشاط تدريبي", "تغيير مقر مركز التدريب"]
+                },
+                "DashBoardName": {
+                    "description": "Name of the dashboard associated with the request type.",
+                    "data_type": "string",
+                    "examples": ["Digital Transformation Dashboard"]
+                }
+            }
+        }
+    },
+    "eee program": {
+        "eee_program": {
+            "description": "This SQL table contains application data for students, including their unique application ID, full names in English and Arabic, application type, institute code, program name, gender, status, high school stream, campus, and institute name. It provides a detailed view of each student's enrollment information and academic background.",
+            "columns": {
+            "No": {
+              "description": "A unique identifier for each record.",
+              "data_type": "string",
+              "examples": [
+                "Retail_18",
+                "Retail_2",
+                "Retail_92",
+                "Retail_91",
+                "Retail_17"
+              ]
+            },
+            "Batch_No": {
+              "description": "The batch number associated with the record.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "1",
+                "5",
+                "2021 June",
+                "2"
+              ]
+            },
+            "Status": {
+              "description": "The current status of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "Employed",
+                "Trainee - Left the program",
+                "Exited the program",
+                "Trainee - On Hold"
+              ]
+            },
+            "Reason_for_Leaving_the_Program": {
+              "description": "The reason why the trainee left the program.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "Lost interest in the program during training period (first two months)",
+                "Not confirmed upon completion of training period by employer (first two months)",
+                "Left the program due to health / family / personal reasons",
+                "Left for another job opportunity"
+              ]
+            },
+            "Currently_Active": {
+              "description": "Indicates whether the trainee or employee is currently active.",
+              "data_type": "string",
+              "examples": [
+                "Yes",
+                "No"
+              ]
+            },
+            "Is_Currently_Active": {
+              "description": "Current activity status of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "Active",
+                "Withdrawn"
+              ]
+            },
+            "Signed_Contract": {
+              "description": "Indicates whether the trainee or employee has signed a contract.",
+              "data_type": "string",
+              "examples": [
+                "Yes",
+                "No"
+              ]
+            },
+            "Signed_Contract_Count": {
+              "description": "The number of contracts signed by the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "1"
+              ]
+            },
+            "End_of_Service_Date": {
+              "description": "The date when the service of the trainee or employee ended.",
+              "data_type": "string",
+              "examples": []
+            },
+            "Training_Date": {
+              "description": "The date when the training started.",
+              "data_type": "string",
+              "examples": []
+            },
+            "Work_Readiness_Training": {
+              "description": "Indicates if the trainee completed work readiness training.",
+              "data_type": "string",
+              "examples": []
+            },
+            "Initial_Salary": {
+              "description": "The initial salary of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "3600.0",
+                "nan",
+                "8000.0",
+                "11500.0",
+                "12000.0"
+              ]
+            },
+            "Current_Salary": {
+              "description": "The current salary of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "3600.0",
+                "nan",
+                "8000.0",
+                "7000.0",
+                "11500.0"
+              ]
+            },
+            "Sector": {
+              "description": "The sector in which the trainee or employee is working.",
+              "data_type": "string",
+              "examples": [
+                "Retail"
+              ]
+            },
+            "Employer": {
+              "description": "The employer of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "Carrefour",
+                "ADCOOP",
+                "LULU Group"
+              ]
+            },
+            "Location_or_Branch": {
+              "description": "The location or branch where the trainee or employee is working.",
+              "data_type": "string",
+              "examples": [
+                "Jimi Mall",
+                "AD Buteen Branch",
+                "Yas Mall",
+                "Bawadi",
+                "AD Mina Branch"
+              ]
+            },
+            "Initial_Job_title": {
+              "description": "The initial job title of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "Management Trainee",
+                "Trainee supervisor",
+                "Customer Service Representative",
+                "Assistant Supervisor",
+                "Cashier"
+              ]
+            },
+            "Exit_Date": {
+              "description": "The date when the trainee or employee exited the program.",
+              "data_type": "string",
+              "examples": [
+                "2018-11-09",
+                "2018-06-21",
+                "2019-11-15",
+                "2018-10-18",
+                "2020-01-26"
+              ]
+            },
+            "Level_2_Graduation_Date": {
+              "description": "The graduation date for Level 2 qualification.",
+              "data_type": "string",
+              "examples": []
+            },
+            "Level_3_Graduation_Date": {
+              "description": "The graduation date for Level 3 qualification.",
+              "data_type": "string",
+              "examples": [
+                "2019-10-10",
+                "2019-02-10",
+                "2019-04-23"
+              ]
+            },
+            "Level_4_Graduation_Date": {
+              "description": "The graduation date for Level 4 qualification.",
+              "data_type": "string",
+              "examples": [
+                "2019-11-10",
+                "2020-01-19"
+              ]
+            },
+            "Current_Qualification_Level": {
+              "description": "The current qualification level of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "Certificate 2 in Retail Operations",
+                "Diploma in Retail Operations"
+              ]
+            },
+            "Current_Job_Title": {
+              "description": "The current job title of the trainee or employee.",
+              "data_type": "string",
+              "examples": [
+                "Management Trainee",
+                "Exited the program",
+                "Assistant Supervisor",
+                "Cashier",
+                "Customer Service Representative"
+              ]
+            },
+            "Candidates_Satisfaction": {
+              "description": "The satisfaction level of the candidates.",
+              "data_type": "string",
+              "examples": [
+                "nan"
+              ]
+            },
+            "Employers_Satisfaction": {
+              "description": "The satisfaction level of the employers.",
+              "data_type": "string",
+              "examples": [
+                "nan"
+              ]
+            },
+            "Is_Active": {
+              "description": "Indicates whether the trainee or employee is currently active or withdrawn.",
+              "data_type": "string",
+              "examples": [
+                "Active",
+                "Withdrawn"
+              ]
+            },
+            "year": {
+              "description": "The year associated with the record.",
+              "data_type": "string",
+              "examples": [
+                "2022",
+                "2021",
+                "2023",
+                "2020",
+                "2019"
+              ]
+            },
+            "month": {
+              "description": "The month associated with the record.",
+              "data_type": "string",
+              "examples": [
+                "Jun",
+                "Apr",
+                "Nov",
+                "Dec",
+                "Mar"
+              ]
+            },
+            "YearMonth": {
+              "description": "A combination of year and month in the format YYYYMM.",
+              "data_type": "string",
+              "examples": [
+                "202201",
+                "202107",
+                "202206",
+                "202205",
+                "202106"
+              ]
+            },
+            "Month_Year": {
+              "description": "A combination of month and year in the format 'Mon YYYY'.",
+              "data_type": "string",
+              "examples": [
+                "Jan 2022",
+                "Jul 2021",
+                "Jun 2022",
+                "May 2022",
+                "Jun 2021"
+              ]
+            }
+        }
+        },
+        "eee_candidates": {
+            "description": "This SQL table contains information about candidates, including their unique identifier (No), names in English and Arabic, gender, nationality, Emirates ID, phone number, email, city, education level, and joining date. It provides a comprehensive view of each candidate's personal and educational details.",
+            "columns": {
+                "No": {
+              "description": "A unique identifier for each candidate record.",
+              "data_type": "string",
+              "examples": [
+                "Exchange_nan",
+                "Retail_18",
+                "Exchange_5.0",
+                "Tawseel_106",
+                "Tawseel_104"
+              ]
+            },
+            "Candidate_Name_English": {
+              "description": "The candidate's name in English.",
+              "data_type": "string",
+              "examples": [
+                "Ghanim alhammadi",
+                "Ahlam abd al aziz almarzooki",
+                "Mzoon Nasser swaidan",
+                "Fatima almarzouki",
+                "Ahlam Fayez Quraish"
+              ]
+            },
+            "Candidate_Name_Arabic": {
+              "description": "The candidate's name in Arabic.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "أحلام فايز قريش",
+                "فاطمة الزيودي",
+                "عائشة خلفان الكلباني",
+                "أسماء علي الغيثي"
+              ]
+            },
+            "Gender": {
+              "description": "The gender of the candidate.",
+              "data_type": "string",
+              "examples": [
+                "Female",
+                "Male",
+                "Female "
+              ]
+            },
+            "Nationality": {
+              "description": "The nationality of the candidate.",
+              "data_type": "string",
+              "examples": [
+                "Emirati",
+                "UAE"
+              ]
+            },
+            "Emirates_ID": {
+              "description": "The Emirates ID of the candidate.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "784-1985-3643070-9",
+                "784-2001-3692852-8",
+                "784-1989-3290582-5",
+                "784-1991-2140941-3"
+              ]
+            },
+            "Phone_No": {
+              "description": "The phone number of the candidate.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "971528889088",
+                "971556244277",
+                "971501298800",
+                "971553312454"
+              ]
+            },
+            "Email": {
+              "description": "The email address of the candidate.",
+              "data_type": "string",
+              "examples": [
+                "nan",
+                "ahlami_30@hotmail.com",
+                "Kalhashmi1999@gmail.com",
+                "hamdahh54@yahoo.com",
+                "noura.aldossari@hotmail.com"
+              ]
+            },
+            "City": {
+              "description": "The city where the candidate resides.",
+              "data_type": "string",
+              "examples": [
+                "Abu Dhabi",
+                "Al Ain",
+                "Al Ain",
+                "Dubai",
+                "Sharjah"
+              ]
+            },
+            "Education": {
+              "description": "The education level of the candidate.",
+              "data_type": "string",
+              "examples": [
+                "Education Level",
+                "nan",
+                "High School",
+                "TBC",
+                "Bachelor"
+              ]
+            },
+            "Joining_Date": {
+              "description": "The date when the candidate joined the program.",
+              "data_type": "string",
+              "examples": [
+                "2020-02-11",
+                "2021-06-07",
+                "2018-03-11",
+                "2020-01-15",
+                "2018-09-09"
+              ]
+            }
+            }
+        }
+    }
+}

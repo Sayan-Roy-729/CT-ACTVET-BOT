@@ -1,0 +1,39 @@
+**Thought:** As an expert in Azure SQL, the goal is to generate a syntactically correct MSSQL query based on the provided user query and given SQL schemas. The schemas contain information about different tables in markdown format, and the task is to select the most appropriate schema to generate the query. Follow the steps outlined below for accurate query generation.
+WHEN GENERATING THE MSSQL QUERY, SELECT THE ONLY RELEVANT COLUMN NAMES FROM THE GIVEN SCHEMA. DON'T SELECT ALL THE COLUMNS FROM SCHEMA, ONLY SELECT THE RELEVENT COLUMNS TO USER QUERY
+There are more than one schema. Each schema is for different markdown tables. Based on the query information select the most appropriate table schema and generate sql query for that schema
+IN THE SQL QUERY KEEP THE VALUES AS IT IS IN THE GIVEN SCHEMA
+
+Table Schemas: 
+***{{$schema}}***
+
+**Step 1:** Analyze the user query in conjunction with the top 5 table schemas to determine if a valid MSSQL query can be generated. A given sql schema is divided in to three sections, one is section_name: from which section schema is taken, second is table_name from which table schema is taken, thrid is Schema using which sql query need to be generated  .If the query cannot be matched with any schema information, respond with "NO SQL QUERY CAN BE GENERATED." 
+**Action:** Examine the user query and compare it with the available schema information.
+**Action Input:** User Query, Table Schemas (TOP 5)
+**Observation:** Determine if there is explicit information in the schemas to generate a valid MSSQL query for the user's question. If not, indicate that no suitable SQL query can be created.
+---
+**Step 2:** If a valid MSSQL query can be generated, select the most appropriate table schema from the top 5 based on the user query. Analyze the contents of each table schema to make an informed decision.
+**Action:** Review the contents of the top 5 table schemas and select the one that best matches the user query.
+**Action Input:** Table Schemas (TOP 5)
+**Observation:** Evaluate the table names and contents to choose the schema that aligns most accurately with the user query's requirements.
+---
+**Step 3:** Based on the selected table schema and its column names, generate an MSSQL query that accurately answers the user query. You can Utilize the "WHERE" keyword in the SQL query and employ "LIKE %" to match values.
+**Action:** If needed you can Create an MSSQL query using the selected table schema and column names, incorporating "WHERE COLUMN_NAME LIKE %VALUE%" format.
+**Action Input:** Selected Table Schema, User Query
+**Observation:** Ensure that the generated MSSQL query adheres to the specified format and matches the user query's criteria.
+---
+**Step 4:** Enclose column and table names within square brackets in the MSSQL query to maintain syntactical correctness. Confirm that the SQL query's column names align with the selected table schema.
+**Action:** Format the MSSQL query with column and table names enclosed within square brackets.
+**Action Input:** Generated MSSQL Query, Selected Table Schema
+**Observation:** Verify that the SQL query follows the correct syntax with appropriate brackets and accurate column names and keywords in sql query
+---
+**Step 5:** Produce a JSON file containing the generated MSSQL query and the section name from which the table schema was selected. Use "sql_query" and "section_name" as keys in the JSON file.
+**Action:** Create a JSON file with keys "sql_query" and "section_name" and populate them with the generated MSSQL query and the selected section's name.
+**Action Input:** Generated MSSQL Query, Selected Section Name
+**Observation:** Verify the JSON file structure and content to ensure accurate representation of the SQL query and section information.
+---
+
+USER QUERY :
+***{{$final_query}}***
+
+Based on the given Top-5 given schemas, choose the best schema that can answer the User Query and generate MYSQL Query, when generating the query only use minimum columns in MYSQL query that can answer best to User Query. REFRAIN FROM INCLUDING int, float, boolean, datetime, VARCHAR(MAX) DATA TYPES IN MYSQL QUERY, ONLY CONSIDER COLUMN NAME
+Output a JSON file with section_name, sql_query as keys

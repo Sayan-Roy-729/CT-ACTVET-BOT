@@ -1,0 +1,154 @@
+{
+    "emirates skills": [
+        "Whenever user asks anything related to the competitors, like name or count in the QUESTION, and if ```actvet_uc.gold.competitors``` table is used in the original sql query, only then it's compulsory to use the 'Competitor_Name_Year' column instead of column 'Competitor_Name' or `COUNT(*)` and add `National_Competition = 1` as a filter, additionally if 'actvet competitors' is mentioned in the user question, add the `School_System = 'ACTVET'` along with the other filters.",
+
+        "Whenever user asks anything related to the winners, like count or name in the user question, and if ```actvet_uc.gold.winners``` table is not used in the original SQL query, then change the table to ```actvet_uc.gold.winners``` and, only then do the inner join ```... INNER JOIN actvet_uc.gold.competitors ON actvet_uc.gold.winners.Key = actvet_uc.gold.competitors.Key``` It's compulsory to use the unique count of 'actvet_uc.gold.competitors.Competitor_Name_Year' column instead of column 'Competitor_Name' from table 'actvet_uc.gold.competitors' and add ```actvet_uc.gold.winners.Winner = '1'``` as a filter. If in the user question, 'year' is mentioned, then choose ```actvet_uc.gold.competitors = year``` instead using any other column. Additionally if 'actvet winners' is mentioned in the user question, then also add the ```actvet_uc.gold.competitors. = 'ACTVET'``` and if 'non actvet winners' is mentioned in the user question, then do ```actvet_uc.gold.competitors != 'ACTVET'```. And instead of ```gcc_medal```, use ```actvet_uc.gold.winners.Medal``` column.",
+
+        "If in the user question 'maximum competitors' or 'minimum competitors' or 'highest competitors' or anything like this for any category or school is mentioned, then always show the values which has the same maximum or minimum values."
+    ],
+    "advtei certificate claims": [],
+    "vedc students satisfaction": [
+        "If the user questions asks only about total count of 'Very Good' or 'Good' or anything related this, then always use `SUM(ResponseCount)` instead of `COUNT(*)` and modify the filter as `answer = 'Very Good' or `answer = 'Good'` based on the user question.",
+        
+        "If the user questions asks about 'satisfaction ratio' or 'survey result', then always user 'AnswerScore' column instead of 'Survey_Result' column. Also, cast this 'AnswerScore' column to the float value and add filter to exclude the 'nan' values as `AnswerScore != 'nan'`. If in the user question, 'year' is not mentioned then always add the maximum value of the 'Year' column as a filter. And, for the 'overall satisfaction' or 'overall satisfaction percentage', you much have to use the 'Survey_Result' column instead of 'AnswerScore' column.",
+
+        "If 'response count' is mentioned in the user question, then always use 'COUNT(DISTINCT ResponseNo)' instead of 'COUNT(*)'."
+    ],
+    "adveti staff satisfaction": [
+        "If the user question asks anything related about 'overall satisfaction' or 'satisfaction percentage', then always use the average of 'AnswerScore' column instead of 'Survey_Result' column. Also, cast this 'AnswerScore' column to the float value and add filter to exclude the 'nan' values as `AnswerScore != 'nan'`.",
+
+        "If 'total response count' or 'ResponseCount' is mentioned in the user question, then always use 'COUNT(DISTINCT ResponseNo)' instead of 'COUNT(*)'.",
+
+        "If in the user question, 'very good', 'good', 'average', 'poor', 'very poor' is mentioned, then always use the 'Answer' column instead of 'Survey_Result' column. And, instead of `COUNT(*)`, always use `SUM(ResponseCount)`",
+
+        "If in the user question, '1 to 3 years of service' or '4 to 6 years of service' or anything related this is mentioned, then always use the `(Years_of_Service = '1 - 3 years' OR Years_of_Service = '1 to 3 years')` OR `(Years_of_Service = '4 - 6 years' OR Years_of_Service = '4 to 6 years')` as a filter. For the 'Years_of_Service' column, the unique values are: ['1 - 3 years', 'Less than 1 year', 'nan', '1 to 3 years', '10 years *', '10 years +', '4 - 6 years', '4 to 6 years', '7 -10 years', '7+ years', 'Less than one year', '7 - 10 years'] and you have to use the same values as mentioned here.",
+
+        "If in the user question 'culture and work environment' or 'manager' or 'rewards and recognition' is mentioned, then always use the `Category = 'Culture & Work Environment'` or `Category = 'Manager'` or `Category = 'Reward & Recognition'` as a filter. For the 'Category' column, these are the unique values: ['Commitment to our Organisation', 'Culture & Work Environment', 'Reward & Recognition', 'nan', 'Human Resources Services', 'Manager', 'Communication', 'Job Stability', 'Reward & Recognition, Employee Survey', 'Learning & Development'] and you have to use the same values as mentioned here.",
+
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter."
+    ],
+    "actvet staff satisfaction": [
+        "If 'response id' or 'ResponseID' is mentioned in the user question, then always use `COUNT(DISTINCT ResponseNo)` to the sql query. But if 'response count' is mentioned in the user question, you much have to use `SUM(ResponseCount)`.",
+
+        "If the user question asks about 'response rate', then always calculate the `COUNT(DISTINCT ResponseNo) / 82`.",
+
+        "If 'satisfaction percentage' or 'satisfaction %' or 'result' is mentioned in the user question, then always use the average of 'AnswerScore' column instead of 'survey_result' column. Also, cast this 'AnswerScore' column to the float value and add filter to exclude the 'nan' values as `AnswerScore != 'nan'`.",
+
+        "If in the user question '1 to 3 years of service' or '4 to 6 years of service' is mentioned then you must have to use `Years_of_Service = ' 1 to 3 years'` or `Years_of_Service = ' 4 to 6 years'`. For the 'Years_of_Service' column, these are the unique values: [' 4 to 6 years', ' 1 to 3 years', 'Less than a year', ' More than 6 years'] and you have to use the same values as mentioned here.",
+
+        "If in the user question 'my job stability' or 'my manager' or 'rewards and recognition' is mentioned, then always use the `Category = 'My Job Stability'` or `Category = 'My Manager'` or `Category = 'Rewards & Recognition'` as a filter. For the 'Category' column, these are the unique values: ['My Job Stability', 'Culture & Work Environment', 'Rewards & Recognition', 'Commitment to our organisation', 'Communication', 'Learning & Development', 'My Manager'] and you have to use the same values as mentioned here.",
+
+        "If in the user question, 'Strongly Agree', 'Agree, or anything like this is mentioned, then always use `Answer = 'Strongly Agree'` or `Answer = 'Agree'` as a filter. And, instead of `COUNT(*)`, always use `COUNT(ResponseNo)`.",
+
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter."
+    ],
+    "iat students satisfaction": [
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter.",
+
+        "If in the user question, 'responses' or 'total responses' or 'response count' is mentioned, then always use `COUNT(DISTINCT ResponseNo)` instead of `COUNT(*)` after the `SELECT` statement",
+
+        "If in the question, 'overall satisfaction' or 'satisfaction percentage' or 'students satisfaction' or 'survey result' or 'result' is mentioned, then always use the average of 'Survey_Result' column. Also, cast this 'Survey_Result' column to the float value. And if 'satisfaction ratio' is mentioned in the user question, then always use the average of 'AnswerScore' column instead of 'Survey_Result' column. Also, cast this 'AnswerScore' column to the float value and add filter to exclude the 'nan' values as `AnswerScore != 'nan'`.",
+
+        "For the 'Category' column, these are the unique values: ['Educational Experience', 'General Feedback', 'Campus Environment and Services', 'Online Learning Experience', 'Learning Resources and Facilities']. If anything related to these categories is mentioned in the user question like 'online learning experience', then replace the 'question' column with the `Category = 'Online Learning Experience'` or `Category = 'Educational Experience'` or `Category = 'General Feedback'` or `Category = 'Campus Environment and Services'` or `Category = 'Learning Resources and Facilities'` as a filter.",
+
+        "If in the user question 'very good' or 'good' or anything like this is mentioned then always use the `Answer IN ('Very Good', 'Strongly Agree')` or `Answer IN ('Good', 'Agree')` in the `WHERE` part as a filter. So, for the 'Answer' column, these are the combinations: [('Strongly Agree', 'Very Good'), ('Agree', 'Good'), ('Average', 'Acceptable'), ('Poor', 'Disagree'), ('Very Poor', 'Strongly Disagree')]. INSTEAD OF `COUNT(*)` USE `SUM(ResponseCount)` FOR THE COUNT OF 'Very Good' OR 'Good' OR 'Very Poor' etc.",
+
+        "If in the question 'fchs' or 'adpoly' is mentioned, then replace the `program = 'FCHS'` or `program = 'ADPOLY'` with the `Entity = 'FCHS'` or `Entity = 'ADPOLY'`."
+    ],
+    "iat staff satisfaction": [
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter.",
+
+        "If in the user question, 'responses' or 'total responses' or 'response count' is mentioned, only then always use `COUNT(DISTINCT ResponseNo)` instead of `COUNT(*)` after the `SELECT` statement",
+
+        "If in the question, 'overall staff satisfaction' or 'overall satisfaction' or 'satisfaction percentage' or 'survey result' or 'result' is mentioned, then always use the average of 'AnswerScore' column. Also, cast this 'AnswerScore' column to the float value and add filter to exclude the 'nan' values as `AnswerScore != 'nan'`.",
+
+        "If in the user question, '1 to 3 years of service' or '4 to 6 years of service' or anything related this is mentioned, then always use the `Years_of_Service IN ('1 to 3 years', '1-3 years')` OR `Years_of_Service IN ('4-6 years', '4 to 6 years')` as a filter. For the 'Years_of_Service' column, the unique values are: ['Less than 1 year', '4-6 years', '1 to 3 years', '4 to 6 years', '7+ years', '2-4 years', 'Less than one year', '1-3 years'] and you have to use the same values as mentioned here.",
+
+        "If in the user question 'reward and recognition' or 'reward and recognition employee survey' or 'communication' or anything is mentioned then always use the `Category = 'Reward & Recognition, Employee Survey'` or `Category = 'Communication'` as a filter. For the 'Category' column, these are the unique values: ['Commitment to our Organisation', 'Culture & Work Environment', 'Human Resources Services', 'Manager', 'Communication', 'Job Stability', 'Learning & Development', 'Reward & Recognition, Employee Survey'] and you have to use the same values as mentioned here.",
+
+        "If in the question 'administrative staff of the IAT Directorate' or 'school directorate admin staff' or anything is mentioned in the user question, then always use the `Profession = 'IAT Directorate Admin Staff'` or `Profession = 'School Directorate Admin Staff'`. For the 'Profession' column, these are the unique values: ['ATHS Senior Level Leader (Principal, Vice Principal)', 'IAT Directorate Admin Staff', 'ADPoly Administrative Staff', 'School Directorate Admin Staff', 'FCHS Administrative Staff', 'ATHS Administrative Staff', 'ATHS Teacher/Lead Teacher', 'Director/Senior Manager/Manager or Higher', 'FCHS Faculty/Lab Technician', 'Director / Senior Manager / Manager or Higher', 'ADPoly Faculty/Lab Technician', 'ADPoly Senior Level Leader (Program/Department Head)', 'ATHS Senior Level Leader (Principal, Vice Principal, Manager, Senior Manager)', 'ADPoly/FCHS Faculty/Lab Technician', 'FCHS Senior Level Leader (Program/Department Head)', 'ADPoly/FCHS Senior Level Leader (Program/Department Head)', 'ADPoly/FCHS Administrative Staff', 'IAT Directorate Staff'] and you have to use the same values as mentioned here.",
+
+        "If in the user question 'very good' or 'good' or anything like this is mentioned then always use the `Answer IN ('Very Good', 'Strongly Agree')` or `Answer IN ('Good', 'Agree')` in the `WHERE` part as a filter. So, for the 'Answer' column, these are the combinations: [('Strongly Agree', 'Very Good'), ('Agree', 'Good'), ('Average', 'Neither Agree Nor Disagree'), ('Poor', 'Disagree'), ('Very Poor', 'Strongly Disagree')]. AND, ALWAYS USE ```SUM(ResponseCount)``` INSTEAD OF ```COUNT(*)``` IN THE ```SELECT``` STATEMENT."
+    ],
+    "eee program": [
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter.",
+
+        "If in the user question 'hired candidates' is mentioned, then always add ```actvet_uc.gold.eee_program.Signed_Contract = 'Yes' AND actvet_uc.gold.eee_program.Signed_Contract_Count = '1'``` instead of ```actvet_uc.gold.eee_program.status = 'Hired'```. Also instead of ```COUNT(*)```, use ```COUNT(DISTINCT actvet_uc.gold.eee_program.No)```. And for the 'year' mentioned in the user question, you must have to use ```actvet_uc.gold.eee_program``` each time because  ```eee_candidates``` table has no ```year``` column. Also, if in the user question 'percentage' or '%' is mentioned, then in the denominator, always use ```COUNT(DISTINCT actvet_uc.gold.eee_program.No)``` along with the ```actvet_uc.gold.eee_program.Signed_Contract = 'Yes' AND actvet_uc.gold.eee_program.Signed_Contract_Count = '1'``` filters instead of ```COUNT(*)```.",
+
+        "If in the user question 'status' is mentioned, then use the ```actvet_uc.gold.eee_program.Is_Active``` column which has these unique values: ['Active', 'Withdrawn']. So, modify the original SQL query, based on the user question, to use the ```actvet_uc.gold.eee_program.Is_Active.Is_Active``` column instead of ```actvet_uc.gold.eee_candidates.status``` column.",
+
+        "If in the sql query, ```Candidate_Name_English``` is mentioned, then do the ```INNER JOIN actvet_uc.gold.eee_candidates ON actvet_uc.gold.eee_program.No = actvet_uc.gold.eee_candidates.No``` and add ```actvet_uc.gold.eee_candidates.Candidate_Name_English``` in the ```SELECT``` statement.",
+    
+        "If in the user question 'hired candidates' is mentioned, then always do ```INNER JOIN actvet_uc.gold.eee_program ON actvet_uc.gold.eee_candidates.No = actvet_uc.gold.eee_program.No``` and add ```actvet_uc.gold.eee_program.Signed_Contract = 'Yes' AND actvet_uc.gold.eee_program.Signed_Contract_Count = '1'```. Also, instead of ```COUNT(*)```,always use ```COUNT(DISTINCT actvet_uc.gold.eee_program.No)```. And always for the 'year' mentioned in the user question, always use ```actvet_uc.gold.eee_program.Year``` column.",
+
+        "If in the user question 'status' is mentioned, then use the ```actvet_uc.gold.eee_program.Is_Active``` column which has these unique values: ['Active', 'Withdrawn']. So, modify the original SQL query, based on the user question, to use the ```Is_Active``` column instead of ```status``` column.",
+
+        "If in the user question, 'job title' or 'current job' or similar is mentioned, then always use the ```actvet_uc.gold.eee_program.Current_Job_Title``` instead of ```actvet_uc.gold.initial_job_title```."
+    ],
+    "post-secondary admission dashboard": {
+        "psa_institutes_admission_data": []
+    },
+    "schools parents satisfaction": [
+
+        "Whenever user ask anything related to ATS its mandatory to use (DISTINCT ResponseNo) in sql query and add entity = 'ATS' as a filter. For example : - SELECT count(DISTINCT ResponseNo) FROM actvet_uc.gold.schools_parents_survey WHERE Entity = 'ATS' and  year = 2019;"
+    ],
+    "actvet partners satisfaction": [
+        "whenever user asks anything related to count or total number then always use DISTINCT.",
+        "whenever user asks for the count of satisfied users, instead of applying the filter answer = 'satisfied apply Survey_Result>= 0.75 ",
+        "whenever user asks anything related to the satisfied count of any question like 'Ease of access to our service','Expectation Level we have met','Level of Communication,'Level of Compliance with the Terms and Conditions','Level of Cooperation in Providing and Exchanging Information Transparently','Overall, how satisfied or dissatisfied are you with your engagement with ACTVET Partnership?','Quality of Service rendered by us','Time taken to provide the service',etc then its compulsory to use Sum(ResponseCount) with the filter Answer = 'Satisfied' in the sql query. Make sure you never add the filter 'Survey_Result>=0.75' in the sql query"
+    ],
+    "vedc dashboard": [
+        "whenever asked for total unique students use DISTINCT SIS_No instead of Emirates_ID_. Emirates_ID_ will be used only and only if user asks for student id.",
+        "Whenever there is a name of any student in the user question then make sure every word starts with an uppercase letter in the sql query",
+        "Whenever user asks for student id then use column Emirates_ID_"
+    ],
+    "schools dashboard":[
+        "Whenever user asks for total unique students make sure to use schools_dashboard_dim_student[Student_Key_Code]) and additionally add [Data_Subject] = 'Student Enrollment', schools_dashboard_fact_enrollment[Number_of_Students] = 1, schools_dashboard_fact_enrollment[Data_Source] = 'School', schools_dashboard_dim_academic_organization[Entity] <> 'VEDC'"
+    ],
+    "adveti students satisfaction":[
+        "Whenever user ask for response count in the query then take DISTINCT",
+        "whenever user ask anything related to satisfaction ratio by category use AnswerScore instead of survey_result For Example -> SELECT Category, AVG(AnswerScore) AS Satisfaction_Ratio FROM actvet_uc.gold.adveti_student_surveys WHERE Year = 2021 GROUP BY Category;",
+        "Whenever user asks anything additionally like 'Al Jaheli Institute','Al Jazirah Institute','VEDC Sharjah','Baynounah Institute','Al Reef Institute','Al Jazirah Institute- Shahama' or 'VEDC Abu Dhabi' its compulsory to always use the column name 'Campus' as a filer for these Institutes instead of Entity, and keep in mind that its compulsory to use a small letter 'l' for the word 'AL' in the filter Campus for Example Campus = 'Al Jazirah Institute' instead of Campus = 'AL Jazirah Institute'",
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter.",
+        "whenever user asks anything related student satisfaction percentage never include survey_type as a filter and additionally if general english program is mentioned in the question then make sure you add program = 'General English Program' as a filter",
+        "whenever user asks anything related to the survey result percentage then its compulsory to use avg(survey_result) instead of survey_result, for Example: SELECT avg(survey_result) FROM actvet_uc.gold.adveti_student_surveys Learning Resources and Facilities' AND year = 2022;",
+        "If in the user question 'very good' or 'good' or 'average' or 'poor' or 'very poor' is mentioned, then use the following sql skeleton: SELECT sum(ResponseCount) FROM actvet_uc.gold.adveti_student_surveys WHERE Answer IN ('Answer 1','Answer 2','Answer 3') and Category = 'Category Name' and year = year. These are the ```combinations:[('1','Very Good','Extremely Satisfied'), ('2','Good', 'Satisfied'), ('3','Average', 'Acceptable'), ('4','Poor', 'Dissatisfied'), ('5','Very Poor','Extremely Dissatisfied')]```. Where Answer 1, Answer 2 and Answer 3 are values from the column named ```Answer```",
+        "So in the skeleton above Answer 1, Answer 2 and Answer 3 will always be a combination of three values from the column name ```Answer``` as mentioned above in the list ```combinations, STRICTLY USE ALL THE COMBINATIONS TOGETHER```.For Example, user_question: ```give me the very good count of survey result details for 'General Feedback' for 2021```, sql_query: ```SELECT sum(ResponseCount) FROM actvet_uc.gold.adveti_student_surveys WHERE Answer IN ('1','Extremely Satisfied','Very Good') and Category = 'General Feedback' and year = 2021```."
+    ],
+    "social media dashboard": [
+        "whenever user asks anything related to the count of current followers its compulsory to use ```SUM(followers)``` instead of ```count(followers)```, additionally add the filter ```Date = (SELECT MAX(CAST(`Date` AS DATE)) FROM actvet_uc.gold.socialmediaaccounts_data)```",
+        "whenever user asks anything related to the overall count or count or total count of current followers without mentioning any account type then make sure you add the filter using the keyword IN like ```WHERE Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn ', 'Twitter', 'Telegram')```"
+    ],
+
+    "schools students satisfaction": [
+        "If in the user question 'response count' is mentioned, then always calculate the unique count of `school_students_survey ` table.",
+    
+        "If in the user question 'total ats' or 'total sts' is mentioned, then always calculate the unique count of `ResponseNo` column from the `school_students_survey` table where 'ATS' or 'STS' is from the `Entity` column.",
+    
+        "If in the user question 'overall students satisfcation' or 'satisfcation percentage' or 'overall satisfaction' is mentioned, then always use the average of `Survey_Result` column by casting to float. And if in the user question 'satisfcation ratio' or 'survey result' is mentioned then always use the average of `AnswerScore` column instead `Survey_Result` column.",
+    
+        "If in the user question 'highest and lowest' value for 'campus' or 'category' or 'grade' or any other values: refer this SQL query and do the needful changes: ```SELECT Campus, Satisfaction_Ratio FROM (SELECT Campus, AVG(CAST(AnswerScore AS FLOAT)) AS Satisfaction_Ratio FROM actvet_uc.gold.school_students_survey WHERE Year = '2019' GROUP BY Campus ORDER BY Satisfaction_Ratio DESC LIMIT 1) UNION ALL SELECT Campus, Satisfaction_Ratio FROM (SELECT Campus, AVG(CAST(AnswerScore AS FLOAT)) AS Satisfaction_Ratio FROM actvet_uc.gold.school_students_survey WHERE Year = '2019' GROUP BY Campus ORDER BY Satisfaction_Ratio ASC LIMIT 1) ORDER BY Satisfaction_Ratio DESC;```",
+    
+        "If in the user question 'very good' or 'good' or 'acceptable' or 'poor' or 'very poor' is mentioned, then always use the sum of `ResponseCount` column instead of `ResponseNo` column from the `school_students_survey` table.",
+    
+        "For the `Question` column in the `school_students_survey` table, always make the first letter into capilat. For example, if in the user question 'quality of teaching' is mentioned then always consider as `Quality of teaching`."
+    ],
+
+    "graduates and alumni tracking dashboard": [
+        "If in the user question 'expat' or 'expat nationality' is mentioned, then always assume 'Expat' group.",
+    
+        "If in the user question 'adveti graduates' or 'iat graduates' is mentioned, then always assume the 'ADVETI authority' or 'IAT authority'. And if it is not mentioned, then always assume 'iat authority' by default.",
+    
+        "If in the user question only 'nationality' is mentioned, then always assume the 'nationality group' by default.",
+    
+        "If in the question 'fchs' or 'adpoly' mentioned then always use the 'Entity' column for `g_and_a_traccking_academic_organization` table.",
+    
+        "If in the question 'graduates' is mentioned, then always use the distinct count of `Key_SRGT_Student` column from the `g_and_a_traccking_employment` table.",
+    
+        "If in the user question 'employment rate' is mentioned, consider the SQL query along with other parameters based on the question: ```SELECT SUM(CountA) / SUM(CountB) + 0 AS EmploymentRate FROM (SELECT s.Key_SRGT_Student, COUNT(DISTINCT CASE WHEN es.ExcludedFromEmployment = 'No' AND e.TransType = 'Employment' AND e.SecureEmployment = 1 THEN s.Key_SRGT_Student END) AS CountA, COUNT(DISTINCT CASE WHEN es.ExcludedFromEmployment = 'No' AND e.TransType = 'Employment' THEN s.Key_SRGT_Student END) AS CountB FROM actvet_uc.gold.G_and_A_Traccking_Student s INNER JOIN actvet_uc.gold.g_and_a_traccking_employment e ON s.Key_SRGT_Student = e.Key_SRGT_Student INNER JOIN actvet_uc.gold.G_and_A_Traccking_EmploymentStatus es ON es.Key_SRGT_Employment_Status = e.Key_SRGT_Employment_Status GROUP BY s.Key_SRGT_Student) AS StudentCounts;```",
+    
+        "If in the user question 'duration to get a job' or similar is mentioned, then consider this sql query along with other parameters: ```SELECT B.GOT_EMPLOYED_PERIOD, COUNT(DISTINCT A.Key_SRGT_Student) FROM actvet_uc.gold.G_and_A_Traccking_Student AS A INNER JOIN actvet_uc.gold.g_and_a_traccking_employment B ON A.Key_SRGT_Student = B.Key_SRGT_Student INNER JOIN actvet_uc.gold.G_and_A_Traccking_EmploymentStatus C ON C.Key_SRGT_Employment_Status = B.Key_SRGT_Employment_Status WHERE C.ExcludedFromEmployment = 'No' AND B.SecureEmployment = 1 GROUP BY B.GOT_EMPLOYED_PERIOD;```"
+    ],
+    "emsat analysis": [],
+    "post-secondary monthly snapshot": []
+}

@@ -1,0 +1,183 @@
+﻿User ID,Email,Table Name,Column Name for Column Level Restriction,Column Name for Row Level Access,Row Value for Row Level Access
+Hind.AlDarmaki,Hind.aldarmaki@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+khaled.talal,khaled.talal@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+Maha.Alshamsi,Maha.Alshamsi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'FCHS'"
+Mais.AlMasri,Mais.AlMasri@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+mohammad.radi,mohammad.radi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'ADPOLY'"
+Mufeed.Batarseh,Mufeed.Batarseh@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'ADPOLY'"
+naeema.almenhali,naeema.almenhali@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+shadi.ayoub,shadi.ayoub@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='STS'"
+v90000648,nabil.mussa@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='ADVETI'"
+v90001503,Shahid.Husain@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='ADVETI'"
+v90002397,Ian.Baird@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='ADVETI'"
+v90002410,Elizabeth.McConnachie@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='ADVETI'"
+ziad.abusal,ziad.abusal@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+ali.almarzouqi,Ali.Almarzooqi@actvet.gov.ae ,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+Yousef.Amarneh,Yousef.Amarneh@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+safa.yousef,Safa.Yousef@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY IN ('ADPOLY','FCHS','ATS','ATHS')"
+Alyaa.AlBayati,Alyaa.AlBayati@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'ADPOLY'"
+abdulrahman.alali,Abdulrahman.AlAli@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'ADPOLY'"
+khuloud.alkarbi,Khuloud.AlKarbi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+v90000834,manal.aljaberi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='ADVETI'"
+nada.alkatheeri,nada.alkatheeri@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+mahra.altenaiji,Mahra.Altenaiji@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+mohamed.albisher,mohamed.albisher@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY IN ('ADPOLY','FCHS','ATS','ATHS')"
+james.barnes,James.Barnes@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'FCHS'"
+lisa.pratt,Lisa.Pratt@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'FCHS'"
+yousef.alnaimat,Yousef.Alnaimat@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'FCHS'"
+muhammad.arsalan,muhammad.arsalan@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY IN ('ATS','ATHS')"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AIN-G-AQB'"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AIN-B-AQB'"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AIN-G-AQB'"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AIN-B-HILI'"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AIN-G-HILI'"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AIN-B-HILI'"
+Ahnaf.Abbas,ahnaf.abbas@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AIN-G-HILI'"
+90003162,Imad.Talbi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AUH-B-BANIYAS'"
+90003162,Imad.Talbi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AUH-G-BANIYAS'"
+90003162,Imad.Talbi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AUH-B-BANIYAS'"
+90003162,Imad.Talbi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AUH-G-BANIYAS'"
+Karim.Ragab,Karim.Ragab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-DXB-B'"
+Karim.Ragab,Karim.Ragab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-DXB-B'"
+lateefa.alhosani,lateefa.alhosani@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AUH-G'"
+lateefa.alhosani,lateefa.alhosani@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AUH-G'"
+V90002203,Naser.alashab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-RAK-B'"
+V90002203,Naser.alashab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-RAK-B'"
+nasser.almemari,nasser.almemari@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AUH-B'"
+nasser.almemari,nasser.almemari@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AUH-B'"
+90003200,Philip.Reynold@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-UAQ-B'"
+90003200,Philip.Reynold@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-UAQ-G'"
+90003200,Philip.Reynold@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-UAQ-B'"
+90003200,Philip.Reynold@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-UAQ-G'"
+V90002751,Ronald.Fisher@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-SHJ-B'"
+V90002751,Ronald.Fisher@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-SHJ-B'"
+90003255,Royce.Jacobs@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AJM-B'"
+90003255,Royce.Jacobs@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AJM-G'"
+90003255,Royce.Jacobs@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AJM-B'"
+90003255,Royce.Jacobs@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AJM-G'"
+Saeed.AlKindi,Saeed.AlKindi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AIN-B-TBMEC'"
+Saeed.AlKindi,Saeed.AlKindi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-AIN-G-TBMEC'"
+Saeed.AlKindi,Saeed.AlKindi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AIN-B-TBMEC'"
+Saeed.AlKindi,Saeed.AlKindi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-AIN-G-TBMEC'"
+Amal.Alzaabi,Amal.Alzaabi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-FUJ-B'"
+Amal.Alzaabi,Amal.Alzaabi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-FUJ-B'"
+90003368,Khaled.Diab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-DHF-B'"
+90003368,Khaled.Diab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='ATHS-DHF-G'"
+90003368,Khaled.Diab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-DHF-B'"
+90003368,Khaled.Diab@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_CAMPUS_CODE='STS-DHF-G'"
+easa.almarzooqi,Easa.Almarzooqi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY IN ('ATS','ATHS')"
+easa.almarzooqi,Easa.Almarzooqi@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY='STS'"
+shadi.ayoub,shadi.ayoub@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY IN ('ATS','ATHS')"
+Alyaa.AlBayati,Alyaa.AlBayati@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'FCHS'"
+abdulrahman.alali,Abdulrahman.AlAli@actvet.gov.ae,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY = 'FCHS'"
+ali.almarzouqi,Ali.Almarzooqi@actvet.gov.ae ,All Facts and Dimensions Under Institute and School Schemas,,ACDORG_SRGT,"SELECT ACDORG_SRGT FROM DIM_ACADEMIC_ORGANIZATION
+WHERE ACDORG_ENTITY IN ('ADPOLY','FCHS','ATS','ATHS')"
+yousef.amarneh,Yousef.Amarneh@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+v90002397,Ian.Baird@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+SHIELA.MORONG,SHIELA.MORONG@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ACTVET'"
+V90000989,Khaled.Omar@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+V90000486,Sumaia.Almatani@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+elham.alali,elham.alali@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ACTVET'"
+ali.almarzouqi,Ali.Almarzooqi@actvet.gov.ae ,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ACTVET'"
+naeema.almenhali,naeema.almenhali@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+mubarak.alshamsi,Alshamsi@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+ziad.abusal,ziad.abusal@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+mariamabbas.alali,mariamabbas.alali@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='IAT'"
+mariamabbas.alali,mariamabbas.alali@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+v00013431,eeman.alnatour@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+mariam.malek,Mariam.Malek@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='IAT'"
+mariam.malek,Mariam.Malek@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+hind.aldarmaki,Hind.aldarmaki@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ACTVET'"
+khuloud.alkarbi,Khuloud.AlKarbi@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+khaled.talal,khaled.talal@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+khadija.alshehhi,Khadija.AlShehhi@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ACTVET'"
+v90000834,manal.aljaberi@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+Hind.AlDarmaki,Hind.aldarmaki@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"
+Hind.AlDarmaki,Hind.aldarmaki@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='IAT'"
+muhammad.arsalan,muhammad.arsalan@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,,ORG_SRGT,SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+saqer.alhammadi,Saqer.AlHammadi@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ACTVET'"
+safa.yousef,Safa.Yousef@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='IAT'"
+mohamed.albisher,mohamed.albisher@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='IAT'"
+saqer.alhammadi,Saqer.AlHammadi@actvet.gov.ae,HR.FACT_EMPLOYEE_SNAPSHOT,SELECT EMP_BIRTH_DATE FROM HR.DIM_EMPLOYEE,ORG_SRGT,"SELECT ORG_SRGT FROM HR.DIM_ORGANIZATION
+WHERE ORG_AUTHORITY='ADVETI'"

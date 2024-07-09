@@ -1,0 +1,782 @@
+{
+    "graduates and alumni tracking dashboard": {
+        "schema_type": "star schema",
+        "cardinality": "many to many",
+        "g_and_a_traccking_dim_academic_term": {
+            "columns": [
+                "Key_SRGT_Academic_Term",
+                "key_term",
+                "Academic_Term_Business_Key_Code",
+                "Term",
+                "Academic_Year",
+                "Term_Year",
+                "Term_Number",
+                "Term_Start_Date",
+                "Term_End_Date"
+            ],
+            "primary_key": "Key_SRGT_Academic_Term",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Academic_Term"
+            }
+        },
+        "g_and_a_traccking_employment": {
+            "columns": [
+                "Year",
+                "Key_SRGT_Student",
+                "Key_SRGT_Academic_Organization",
+                "Key_SRGT_Academic_Program",
+                "Key_SRGT_Academic_Term",
+                "Key_SRGT_Employer",
+                "GraduationCount",
+                "ExpectedToGraduateCount",
+                "SurveyCount",
+                "SecureEmployment",
+                "FurtherStudyCount",
+                "Graduation_Date",
+                "NO_OF_EDUCATION_RECORDS",
+                "Key_SRGT_Employment_Function",
+                "Key_SRGT_Employment_Status",
+                "MPLMNT_START_DATE",
+                "ACDPRG_PROGRAM_CODE",
+                "Survey_Flag",
+                "Employment_Flag",
+                "Is_Employed",
+                "Proceed_Study_Flag",
+                "TransType",
+                "JOB_CATEGORY",
+                "GOT_EMPLOYED_PERIOD",
+                "GOT_EMPLOYED_PERIOD_CATEGORY",
+                "SALARY_RANGE",
+                "RELATIVE_MAJOR_JOB",
+                "LastYearTermFlag",
+                "HighestTermFlag"
+            ],
+            "primary_key": "Key_SRGT_Academic_Program"
+        },
+        "g_and_a_traccking_academic_organization": {
+            "columns": [
+                "Key_SRGT_Academic_Organization",
+                "Academic_Organization_Business_Key_Code",
+                "Authority",
+                "Entity",
+                "Campus_Code",
+                "Campus_Name_EN",
+                "Campus_Name_AR",
+                "Campus_City",
+                "Campus_Emirate",
+                "Education_Type",
+                "Campus_Longitude",
+                "Campus_Latitude",
+                "Campus_Long_Lat"
+            ],
+            "primary_key": "Key_SRGT_Academic_Organization",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Academic_Organization"
+            }
+        },
+        "g_and_a_traccking_student": {
+            "columns": [
+                "Key_SRGT_Student",
+                "Student_Key_Code",
+                "Student_Name_AR",
+                "Student_Name_EN",
+                "Is_National_Student",
+                "Is_National_Mother_Student",
+                "Is_GCC_Student",
+                "Is_Expat_Student",
+                "Student_Nationality",
+                "Nationality_Group",
+                "Student_Date_of_Birth",
+                "Student_Age",
+                "Age_Group",
+                "Student_Gender",
+                "Student_Marital_Status",
+                "Student_Emirates_ID",
+                "Student_Passport_Number",
+                "Student_Email",
+                "Student_Telephone",
+                "Student_Mobile",
+                "Student_Address",
+                "Student_PO_Box",
+                "Student_City",
+                "Student_Emirate"
+            ],
+            "primary_key": "Key_SRGT_Student",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Student"
+            }
+        },
+        "g_and_a_traccking_dim_employer": {
+            "columns": [
+                "Key_SRGT_Employer",
+                "Employer_Business_Key_Code",
+                "Employer_Name",
+                "Employer_Industry"
+            ],
+            "primary_key": "Key_SRGT_Employer",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Employer"
+            }
+        },
+        "g_and_a_traccking_academic_program": {
+            "columns": [
+                "Key_SRGT_Academic_Program",
+                "Academic_Program_Business_Key_Code",
+                "Program_Code",
+                "Program_Name",
+                "Program_Major_Code",
+                "Program_Major_Name",
+                "Program_Level_Code",
+                "Program_Level_Name",
+                "Degree_Code",
+                "Degree_Name",
+                "Program_Credit_Hours_Standard",
+                "Program_Group",
+                "Specialization",
+                "Is_NQA"
+            ],
+            "primary_key": "Key_SRGT_Academic_Program",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Academic_Program"
+            }
+        },
+        "g_and_a_traccking_employmentfunction": {
+            "columns": [
+                "Key_SRGT_Employment_Function",
+                "Employment_Function_Business_Key_Code",
+                "Employment_Function"
+            ],
+            "primary_key": "Key_SRGT_Employment_Function",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Employment_Function"
+            }
+        },
+        "g_and_a_traccking_employmentstatus": {
+            "columns": [
+                "Key_SRGT_Employment_Status",
+                "Employment_Status_Business_Key_Code",
+                "Employment_Status",
+                "Employment_Category",
+                "ExcludedFromEmployment"
+            ],
+            "primary_key": "Key_SRGT_Employment_Status",
+            "foreign_keys": {
+                "g_and_a_traccking_employment": "g_and_a_traccking_employment.Key_SRGT_Employment_Status"
+            }
+        }
+    },
+    "schools students satisfaction": {
+        "schema_type": "star schema",
+        "cardinality": "one to many",
+        "school_students_survey": {
+            "columns": [
+                "ResponseNo",
+                "Answer",
+                "Row_No",
+                "Date",
+                "Year",
+                "Campus",
+                "Entity",
+                "Gender",
+                "Grade",
+                "Question",
+                "Category",
+                "Question_Full_Text",
+                "ResponseCount",
+                "AnswerScore",
+                "Survey_Result"
+            ],
+            "primary_key": "ResponseNo",
+            "foreign_keys": {
+                "school_students_satisfaction": "school_students_satisfaction.ResponseNo"
+            }
+        },
+        "AnswersLookup_SchoolStudentsSatisfaction": {
+            "columns": [
+                "Answer",
+                "Answer_Order"
+            ],
+            "primary_key": "Answer"
+        },
+        "QuestionOrder_SchoolStudentsSatisfaction": {
+            "columns": [
+                "Question",
+                "Question_Order"
+            ],
+            "primary_key": "Question"
+        }
+    },
+    "schools dashboard": {
+        "schema_type": "star schema",
+        "schools_dashboard_dim_academic_organization": {
+            "columns": [
+                "Key_SRGT_Academic_Organization",
+                "Academic_Organization_Business_Key_Code",
+                "Authority",
+                "Entity",
+                "Campus_Code",
+                "ACDORGCAMPUS_CODE",
+                "Campus_Name_EN",
+                "Campus_Name_AR",
+                "Campus_City",
+                "Campus_Emirate",
+                "Education_Type",
+                "Campus_Longitude",
+                "Campus_Latitude",
+                "Campus_Long_Lat",
+                "Campus_Capacity",
+                "Campus_Building",
+                "Campus_Complex"
+            ],
+            "primary_key": "Key_SRGT_Academic_Organization",
+            "foreign_keys": {
+                "schools_dashboard_fact_enrollment": "schools_dashboard_fact_enrollment.Key_SRGT_Academic_Organization"
+            },
+            "Cardinality": "One-to-Many"
+        },
+        "schools_dashboard_dim_academic_stream": {
+            "columns": [
+                "Key_SRGT_Academic_Stream",
+                "Academic_Stream_Business_Key_Code",
+                "Stream_Code",
+                "Stream_Name",
+                "Homeroom",
+                "Grade",
+                "Cluster_Code",
+                "Cluster_Name"
+            ],
+            "primary_key": "Key_SRGT_Academic_Stream",
+            "foreign_keys": {
+                "schools_dashboard_fact_enrollment": "schools_dashboard_fact_enrollment.Key_SRGT_Academic_Stream"
+            },
+            "Cardinality": "One-to-Many"
+        },
+        "schools_dashboard_dim_student": {
+            "columns": [
+                "Key_SRGT_Student",
+                "Student_Key_Code",
+                "Student_Name_AR",
+                "Student_Name_EN",
+                "Is_National_Student",
+                "Is_National_Mother_Student",
+                "Is_GCC_Student",
+                "Is_Expat_Student",
+                "Student_Nationality",
+                "Student_Nationality_Group",
+                "Student_Date_of_Birth",
+                "Student_Age",
+                "Student_Gender",
+                "Student_Marital_Status",
+                "Student_Emirates_ID",
+                "Student_Passport_Number",
+                "Student_Email",
+                "Student_Telephone",
+                "Student_Mobile",
+                "Student_Address",
+                "Student_PO_Box",
+                "Student_City",
+                "Student_Emirate"
+            ],
+            "primary_key": "Key_SRGT_Student",
+            "foreign_keys": {
+                "schools_dashboard_fact_enrollment": "schools_dashboard_fact_enrollment.Key_SRGT_Student"
+            },
+            "Cardinality": "Many-to-Many"
+        },
+        "schools_dashboard_fact_enrollment": {
+            "columns": [
+                "Data_Source",
+                "Data_Subject",
+                "Key_SRGT_Student",
+                "Key_SRGT_Academic_Term",
+                "Key_SRGT_Academic_Year",
+                "Month_Year",
+                "Quarter",
+                "Key_SRGT_Academic_Organization",
+                "Key_SRGT_Academic_Stream",
+                "Key_Student_Mark",
+                "Number_of_Students",
+                "Number_of_New_Students",
+                "Number_of_Withdrawn_Students",
+                "Number_of_Dropout_Students",
+                "Number_of_Completed_Stundets",
+                "Number_of_Leaver_Students",
+                "CPA",
+                "Student_Height",
+                "Student_Weight",
+                "Student_BMI",
+                "BMI_Status",
+                "Student_Currently_Enrolled",
+                "AUDIT_SRGT_INSERT"
+            ],
+            "primary_key": ""
+        },
+        "Schools_Dashboard_Dim_Academic_Term": {
+            "columns": [
+                "Key_SRGT_Academic_Term",
+                "Academic_Year_Business_Key_Code",
+                "Academic_Year_Short_Name",
+                "Academic_Year",
+                "Year"
+            ],
+            "primary_key": "Key_SRGT_Academic_Term",
+            "foreign_keys": {
+                "schools_dashboard_fact_enrollment": "schools_dashboard_fact_enrollment.Key_SRGT_Academic_Term"
+            },
+            "Cardinality": "Many-to-Many"
+        },
+        "fact_student_mark_at": {
+            "columns": [
+                "Key_SRGT_Student",
+                "Key_SRGT_Month",
+                "Key_SRGT_Academic_Organization",
+                "Key_SRGT_Academic_Stream",
+                "Key_SRGT_Academic_Course",
+                "Course_Marks",
+                "Mark_Category",
+                "AUDIT_SRGT_INSERT"
+            ],
+            "primary_key": "Key_SRGT_Student",
+            "foreign_keys": {
+                "schools_dashboard_fact_enrollment": "schools_dashboard_fact_enrollment.Key_SRGT_Student"
+            },
+            "Cardinality": "Many-to-Many"
+        }
+    },
+    "post-secondary monthly snapshot": {
+        "schema_type": "star schema",
+        "cardinality": "",
+        "psm_snapshot_dim_academic_program": {
+            "columns": [
+                "Key_SRGT_Academic_Program",
+                "Academic_Program_Business_Key_Code",
+                "Program_Code",
+                "Program_Name",
+                "Program_Major_Code",
+                "Program_Major_Name",
+                "Program_Level_Code",
+                "Program_Level_Name",
+                "Program_Credit_Hours_Standard",
+                "Program_Group",
+                "Degree_code",
+                "Degree",
+                "Specialization"
+            ],
+            "primary_key": "Key_SRGT_Academic_Program"
+        },
+        "psm_snapshot_dim_academic_term": {
+            "columns": [
+                "Key_SRGT_Academic_Term",
+                "key_term",
+                "Academic_Term_Business_Key_Code",
+                "Term",
+                "TermNo",
+                "Term_Number",
+                "Academic_Year",
+                "Term_Year",
+                "Term_Start_Date",
+                "Term_End_Date"
+            ],
+            "primary_key": "Key_SRGT_Academic_Term"
+        },
+        "psm_snapshot_dim_enrollment_status": {
+            "columns": [
+                "Key_SRGT_Enrollment_Status",
+                "Enrollment_Status_Business_Key_Code",
+                "Enrollment_Status"
+            ],
+            "primary_key": "Key_SRGT_Enrollment_Status"
+        },
+        "psm_snapshot_dim_student": {
+            "columns": [
+                "Key_SRGT_Student",
+                "Student_Key_Code",
+                "Student_Name_AR",
+                "Student_Name_EN",
+                "Is_National_Student",
+                "Is_National_Mother_Student",
+                "Is_GCC_Student",
+                "Is_Expat_Student",
+                "Student_Nationality",
+                "Student_Nationality_Group",
+                "Student_Date_of_Birth",
+                "Student_Gender",
+                "Student_Marital_Status",
+                "Student_Emirates_ID",
+                "Student_Passport_Number",
+                "Student_Email",
+                "Student_Telephone",
+                "Student_Mobile",
+                "Student_Address",
+                "Student_PO_Box",
+                "Student_City",
+                "Student_Emirate"
+            ],
+            "primary_key": "Key_SRGT_Student",
+            "foreign_keys": {
+                "psm_snapshot_student_enrollment": "psm_snapshot_student_enrollment.Key_SRGT_Student"
+            }
+        },
+        "psm_snapshot_linktable": {
+            "columns": [
+                "EnrollmentKey",
+                "Data_Source",
+                "Key_SRGT_Student",
+                "Key_SRGT_Academic_Organization",
+                "Key_SRGT_Academic_Program",
+                "Key_SRGT_Academic_Term",
+                "Key_SRGT_Sponsor",
+                "Key_SRGT_Enrollment_Status",
+                "Date",
+                "Year",
+                "Month",
+                "Year_Month",
+                "Month_Year",
+                "Quarter",
+                "AUDIT_SRGT_INSERT",
+                "Data_Subject"
+            ],
+            "primary_key": "EnrollmentKey",
+            "foreign_keys": {
+                "psm_snapshot_student_enrollment": "psm_snapshot_student_enrollment.EnrollmentKey",
+                "psm_snapshot_dim_academic_program": "psm_snapshot_dim_academic_program.Key_SRGT_Academic_Program",
+                "psm_snapshot_dim_academic_term": "psm_snapshot_dim_academic_term.Key_SRGT_Academic_Term",
+                "psm_snapshot_dim_enrollment_status": "psm_snapshot_dim_enrollment_status.Key_SRGT_Enrollment_Status",
+                "psm_snapshot_dim_student": "psm_snapshot_dim_student.Key_SRGT_Student",
+                "psm_snapshot_dim_sponsor": "psm_snapshot_dim_sponsor.Key_SRGT_Sponsor",
+                "psm_snapshot_dim_academic_organization": "psm_snapshot_dim_academic_organization.Key_SRGT_Academic_Organization"
+            }
+        },
+        "psm_snapshot_student_enrollment": {
+            "columns": [
+                "Data_Source",
+                "Key_SRGT_Student",
+                "Key_SRGT_Academic_Organization",
+                "Key_SRGT_Academic_Program",
+                "Key_SRGT_Academic_Term",
+                "Key_SRGT_Sponsor",
+                "Key_SRGT_Month",
+                "Key_SRGT_Enrollment_Status",
+                "Student_Age",
+                "Number_of_Students",
+                "Number_of_Registered_Students",
+                "Number_of_New_Students",
+                "Number_of_New_to_Program_Students",
+                "Number_of_New_to_Level_Stundents",
+                "Number_of_New_to_Institute_Students",
+                "Number_of_Sponsored_Students",
+                "Number_of_Leaver_Students",
+                "Attempted_Credit_Hours",
+                "Completed_Credit_Hours",
+                "Completion_Percent",
+                "Term_GPA",
+                "Has_GPA_Record",
+                "Program_GPA",
+                "Program_Credit_Hours",
+                "Student_Has_Registered_Record",
+                "Student_Has_Active_Registration",
+                "Student_Currently_Enrolled",
+                "Number_of_Registered_Terms",
+                "AUDIT_SRGT_INSERT",
+                "Student_Contract_Hours",
+                "EnrollmentKey"
+            ],
+            "primary_key": "",
+            "foreign_keys": {
+                "psm_snapshot_dim_academic_program": "psm_snapshot_dim_academic_program.Key_SRGT_Academic_Program",
+                "psm_snapshot_dim_academic_term": "psm_snapshot_dim_academic_term.Key_SRGT_Academic_Term",
+                "psm_snapshot_dim_enrollment_status": "psm_snapshot_dim_enrollment_status.Key_SRGT_Enrollment_Status",
+                "psm_snapshot_dim_student": "psm_snapshot_dim_student.Key_SRGT_Student",
+                "psm_snapshot_linktable": "psm_snapshot_linktable.EnrollmentKey",
+                "psm_snapshot_dim_sponsor": "psm_snapshot_dim_sponsor.Key_SRGT_Sponsor",
+                "psm_snapshot_dim_academic_organization": "psm_snapshot_dim_academic_organization.Key_SRGT_Academic_Organization"
+            }
+        },
+        "psm_snapshot_dim_sponsor": {
+            "columns": [
+                "Key_SRGT_Sponsor",
+                "Sponsor_Business_Key_Code",
+                "Sponsor_Name"
+            ],
+            "primary_key": "Key_SRGT_Sponsor",
+            "foreign_keys": {
+                "psm_snapshot_student_enrollment": "psm_snapshot_student_enrollment.Key_SRGT_Sponsor"
+            }
+        },
+        "psm_snapshot_dim_academic_organization": {
+            "columns": [
+                "Key_SRGT_Academic_Organization",
+                "Academic_Organization_Business_Key_Code",
+                "Authority",
+                "Entity",
+                "Campus_Code",
+                "ACDORG_CAMPUS_CODE",
+                "Campus_Name_EN",
+                "Campus_Name_AR",
+                "campus_city",
+                "Campus_Emirate",
+                "Education_Type",
+                "Campus_Longitude",
+                "Campus_Latitude",
+                "Campus_Long_Lat",
+                "Campus_Capacity"
+            ],
+            "primary_key": "Key_SRGT_Academic_Organization",
+            "foreign_keys": {
+                "psm_snapshot_student_enrollment": "psm_snapshot_student_enrollment.Key_SRGT_Academic_Organization",
+                "psm_snapshot_linktable": "psm_snapshot_linktable.Key_SRGT_Academic_Organization"
+            }
+        },
+        "psm_snapshot_dim_offered_campus": {
+            "columns": [
+                "EnrollmentKey",
+                "Data_Source",
+                "Key_SRGT_Student",
+                "Key_SRGT_Academic_Organization",
+                "Key_SRGT_Academic_Program",
+                "Key_SRGT_Academic_Term",
+                "Key_SRGT_Sponsor",
+                "Key_SRGT_Enrollment_Status",
+                "Date",
+                "Year",
+                "Month",
+                "Year_Month",
+                "Month_Year",
+                "Quarter",
+                "AUDIT_SRGT_INSERT",
+                "Data_Subject",
+                "Key_SRGT_Offered_Campus",
+                "Offered_Campus_Business_Key_Code",
+                "Offered_Authority",
+                "Offered_Entity",
+                "Offered_Campus_Code",
+                "Offered_Campus"
+            ],
+            "primary_key": "EnrollmentKey",
+            "foreign_keys": {
+                "psm_snapshot_student_enrollment": "psm_snapshot_student_enrollment.EnrollmentKey",
+                "PSM_Snapshot_Dim_Offered_Campus": "PSM_Snapshot_Dim_Offered_Campus.Key_SRGT_Offered_Campus"
+            }
+        }
+    },
+    "digital transformation dashboard": {
+        "schema_type": "star schema",
+        "cardinality": "many to many",
+        "digital_transformation_RequestTypeLookup": {
+            "columns": [
+                "RequestTypeCode",
+                "RequestTypeAR",
+                "DashBoardName"
+            ],
+            "primary_key": "RequestTypeCode",
+            "foreign_keys": {
+                "digital_transformation_requests": "digital_transformation_requests.RequestType_Code"
+            }
+        },
+        "digital_transformation_requests": {
+            "columns": [
+                "RequestID",
+                "InstituteID",
+                "Request_Type",
+                "RequestType_Code",
+                "Request_Date",
+                "Resolution_Year",
+                "Request_Origin",
+                "Request_Status",
+                "ServiceCount"
+            ],
+            "primary_key": "RequestID",
+            "foreign_keys": {
+                "LinkTable_DigitalTransformationDashboard": "LinkTable_DigitalTransformationDashboard.RequestID",
+                "digital_transformation_RequestTypeLookup": "digital_transformation_RequestTypeLookup.RequestTypeCode"
+            }
+        },
+        "digital_transformation_satisfaction_survey": {
+            "columns": [
+                "RequestID",
+                "InstituteID",
+                "Score",
+                "Survey_Score",
+                "Survey_Date",
+                "Response_Count",
+                "IncludedInSurveyCalc"
+            ],
+            "primary_key": "RequestID",
+            "foreign_keys": {
+                "LinkTable_DigitalTransformationDashboard": "LinkTable_DigitalTransformationDashboard.RequestID"
+            }
+        },
+        "digital_transformation_revenue": {
+            "columns": [
+                "RevenueKey",
+                "RequestID",
+                "InvoiceNumber",
+                "PaymentNumber",
+                "InstituteID",
+                "InvoiceStatus",
+                "PaymentStatus",
+                "Payment_Date",
+                "Total_Amount",
+                "TaxAmount"
+            ],
+            "primary_key": "RevenueKey",
+            "foreign_keys": {
+                "LinkTable_DigitalTransformationDashboard": "LinkTable_DigitalTransformationDashboard.RevenueKey"
+            }
+        },
+        "digital_transformation_Institutions": {
+            "columns": [
+                "InstituteID",
+                "Institute_Name",
+                "Phone",
+                "Email"
+            ],
+            "primary_key": "InstituteID",
+            "foreign_keys": {
+                "LinkTable_DigitalTransformationDashboard": "LinkTable_DigitalTransformationDashboard.InstituteID"
+            }
+        },
+        "LinkTable_DigitalTransformationDashboard": {
+            "columns": [
+                "RevenueKey",
+                "RequestID",
+                "InstituteID",
+                "Date",
+                "Year",
+                "Month",
+                "Year_Month",
+                "Month_Year",
+                "Quarter",
+                "QuarterNo",
+                "QuarterAR",
+                "Quarter_Year",
+                "Year_Quarter",
+                "TransType"
+            ],
+            "primary_key": "RevenueKey",
+            "foreign_keys": {
+                "digital_transformation_satisfaction_survey": "digital_transformation_satisfaction_survey.RequestID",
+                "digital_transformation_requests": "digital_transformation_requests.RequestID",
+                "digital_transformation_Institutions": "digital_transformation_Institutions.InstituteID",
+                "digital_transformation_revenue": "digital_transformation_revenue.RevenueKey"
+            }
+        },
+        "digital_transformationParameters": {
+            "columns": [
+                "Parameter",
+                "Value"
+            ],
+            "primary_key": "Parameter",
+            "foreign_keys": {}
+        },
+        "digial_transformation_actvet_services": {
+            "columns": [
+                "Service_Code",
+                "Service_Name_AR",
+                "Service_Name_ENG",
+                "Service_Description_AR",
+                "Service_Description_ENG",
+                "Beneficiary",
+                "Traditional_Collection",
+                "Digital_Collection",
+                "Traditional_Channels",
+                "Call_Center",
+                "EService",
+                "Smart_Service",
+                "IsTransformable",
+                "NotYetTransformed",
+                "Transformed",
+                "Interactive_Kiosk",
+                "Auto_Answer",
+                "Traditional_Channels_Transactions",
+                "Call_Center_Transactions",
+                "EServices_Transactions",
+                "Smart_Services_Transactions",
+                "Interactive_Kiosk_Transactions",
+                "Auto_Answer_Transactions",
+                "Avg_Satisfaction_Traditional_Channels",
+                "Avg_Satisfaction_EServices",
+                "Avg_Satisfaction_Smart_Services",
+                "Avg_Satisfaction_Interactive_Kiosk",
+                "Avg_Satisfaction_Auto_Answer"
+            ],
+            "primary_key": "Service_Code",
+            "foreign_keys": {}
+        }
+    },
+    "eee program": {
+        "schema_type": "star schema",
+        "cardinality": "many to many",
+        "eee_program": {
+            "columns": [
+                "No",
+                "Batch_No",
+                "Status",
+                "Reason_for_Leaving_the_Program",
+                "Currently_Active",
+                "Is_Currently_Active",
+                "Signed_Contract",
+                "Signed_Contract_Count",
+                "End_of_Service_Date",
+                "Training_Date",
+                "Work_Readiness_Training",
+                "Initial_Salary",
+                "Current_Salary",
+                "Sector",
+                "Employer",
+                "Location_or_Branch",
+                "Initial_Job_title",
+                "Exit_Date",
+                "Level_2_Graduation_Date",
+                "Level_3_Graduation_Date",
+                "Level_4_Graduation_Date",
+                "Current_Qualification_Level",
+                "Current_Job_Title",
+                "Candidates_Satisfaction",
+                "Employers_Satisfaction",
+                "Is_Active",
+                "year",
+                "month",
+                "YearMonth",
+                "Month_Year"
+            ],
+            "primary_key": "No",
+            "foreign_keys": {}
+        },
+        "eee_candidates": {
+            "columns": [
+                "No",
+                "Candidate_Name_English",
+                "Candidate_Name_Arabic",
+                "Gender",
+                "Nationality",
+                "Emirates_ID",
+                "Phone_No",
+                "Email",
+                "City",
+                "Education",
+                "Joining_Date"
+            ],
+            "primary_key": "No",
+            "foreign_keys": {
+                "EEE_Program": "EEE_Program.No"
+            }
+        }
+    },
+    "emsat analysis": {
+        "emsat_data": {
+            "columns": ["Academic_Year", "Year", "StudentID", "School_Code", "Student_Name", "School_Name_AR", "School_Name_EN", "School_Category_EN", "Zone_Desc_AR", "Zone_Desc_EN", "GradeLevelID","StreamID", "Stream_Code", "Stream", "Exam", "Result", "Result_Category", "Result_Category2", "Result_Category3", "ResultCategoryOrder", "Result_Category1", "ResultCategory1Order", "Result_Category_English", "Result_Category_Arabic", "Result_Category_Science", "School_Score", "Performance", "Performance_Score", "EnglishPassed", "MathPassed", "PhysicsPassed", "ChemistryPassed", "BiologyPassed", "Key", "Stream_Group", "TargetKey", "Greater_than_1500", "Greater_than_1900", "Greater_than_2000", "Performance_Score_English_is_Must", "Performance_Score_English_and_Math_are_Must", "Exams", "Exams_All_Combinations"],
+            "primary_key": "TargetKey",
+            "foreign_keys": {
+                "emsat_target": "emsat_target.TargetKey"
+            }
+        },
+        "target_emsat": {
+            "columns": ["TargetKey", "Year", "Stream", "Exam", "Target_Score"],
+            "primary_key": "TargetKey",
+            "foreign_keys": {
+                "emsat_data": "emsat_data.TargetKey"
+            }
+        }
+    }
+}
