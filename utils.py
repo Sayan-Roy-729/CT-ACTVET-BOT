@@ -171,7 +171,7 @@ def find_answer_from_pdf(user_question: str) -> dict:
 def generate_sql_first_level_access(user_question: str, user_email: str, dashboard_name: str) -> dict:
     start = time.time()
     # TODO: Generate SQL query with the metadata dashboards
-    dashboard_lists = ["graduates and alumni tracking dashboard", "schools students satisfaction", "post-secondary monthly snapshot", "schools dashboard", "emsat analysis", "eee program"]
+    dashboard_lists = ["graduates and alumni tracking dashboard", "schools students satisfaction", "post-secondary monthly snapshot", "schools dashboard", "emsat analysis", "eee program", "customer care satisfaction", "schools alumni", "emirates skills", "schools students behaviour"]
     if dashboard_name.lower() in dashboard_lists:
         print(f"{bcolors.FAIL}Dashboard Name for the metadata section: {dashboard_name}{bcolors.ENDC}")
         # find the relations between tables for the dashboard

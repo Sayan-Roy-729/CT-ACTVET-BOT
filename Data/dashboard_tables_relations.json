@@ -777,6 +777,35 @@
             "foreign_keys": {
                 "emsat_data": "emsat_data.TargetKey"
             }
+        },
+        "emsat_enrollment_data": {
+            "columns": ["key", "Enrolled_Students"],
+            "primary_key": "key",
+            "foreign_keys": {
+                "emsat_data": "emsat_data.Key"
+            }
         }
-    }
+    },
+    "customer care satisfaction": [
+        ["cases_customercaresatisfaction","Case_Name","customer_survey_customercaresatisfaction"],
+        ["cases_customercaresatisfaction","Case_Name","linktable_customercaresatisfaction"],
+        ["linktable_customercaresatisfaction","Year","target_customercaresatisfaction"]
+    ],
+    "post-secondary admission dashboard": [],
+    "schools alumni": [
+        ["alumni_records","Student_Business_Key_Code","dim_student_school_alumni"],
+        ["alumni_records","Academic_Organization_Business_Key_Code","dim_academic_organization"]
+    ],
+    "emirates skills": [
+        ["winners","Key","competitors"],
+        ["competitors","GCCKey","gcc"],
+        ["competitors","AsiaKey","asia"]
+    ],
+    "schools students behaviour": [
+        ["ss_behaviour_dim_student","Student_ID","ss_behaviour_fact_enrollment"],
+        ["ss_behaviour_fact_enrollment","Key_SRGT_Academic_Organization","ss_behaviour_dim_academic_organization"],
+        ["ss_behaviour_fact_enrollment","Key_SRGT_Academic_Stream","ss_behaviour_streamsrgt_mapping"],
+        ["ss_behaviour_fact_enrollment","BehaviourKey","ss_behaviour_studentsbehaviour"],
+        ["ss_behaviour_streamsrgt_mapping","Key_SRGT_Academic_Stream","ss_behaviour_dim_acadmic_organization"]
+    ]
 }

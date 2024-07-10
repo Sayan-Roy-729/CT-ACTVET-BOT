@@ -1,11 +1,4 @@
 {
-    "emirates skills": [
-        "Whenever user asks anything related to the competitors, like name or count in the QUESTION, and if ```actvet_uc.gold.competitors``` table is used in the original sql query, only then it's compulsory to use the 'Competitor_Name_Year' column instead of column 'Competitor_Name' or `COUNT(*)` and add `National_Competition = 1` as a filter, additionally if 'actvet competitors' is mentioned in the user question, add the `School_System = 'ACTVET'` along with the other filters.",
-
-        "Whenever user asks anything related to the winners, like count or name in the user question, and if ```actvet_uc.gold.winners``` table is not used in the original SQL query, then change the table to ```actvet_uc.gold.winners``` and, only then do the inner join ```... INNER JOIN actvet_uc.gold.competitors ON actvet_uc.gold.winners.Key = actvet_uc.gold.competitors.Key``` It's compulsory to use the unique count of 'actvet_uc.gold.competitors.Competitor_Name_Year' column instead of column 'Competitor_Name' from table 'actvet_uc.gold.competitors' and add ```actvet_uc.gold.winners.Winner = '1'``` as a filter. If in the user question, 'year' is mentioned, then choose ```actvet_uc.gold.competitors = year``` instead using any other column. Additionally if 'actvet winners' is mentioned in the user question, then also add the ```actvet_uc.gold.competitors. = 'ACTVET'``` and if 'non actvet winners' is mentioned in the user question, then do ```actvet_uc.gold.competitors != 'ACTVET'```. And instead of ```gcc_medal```, use ```actvet_uc.gold.winners.Medal``` column.",
-
-        "If in the user question 'maximum competitors' or 'minimum competitors' or 'highest competitors' or anything like this for any category or school is mentioned, then always show the values which has the same maximum or minimum values."
-    ],
     "advtei certificate claims": [],
     "vedc students satisfaction": [
         "If the user questions asks only about total count of 'Very Good' or 'Good' or anything related this, then always use `SUM(ResponseCount)` instead of `COUNT(*)` and modify the filter as `answer = 'Very Good' or `answer = 'Good'` based on the user question.",
@@ -85,9 +78,6 @@
 
         "If in the user question, 'job title' or 'current job' or similar is mentioned, then always use the ```actvet_uc.gold.eee_program.Current_Job_Title``` instead of ```actvet_uc.gold.initial_job_title```."
     ],
-    "post-secondary admission dashboard": {
-        "psa_institutes_admission_data": []
-    },
     "schools parents satisfaction": [
 
         "Whenever user ask anything related to ATS its mandatory to use (DISTINCT ResponseNo) in sql query and add entity = 'ATS' as a filter. For example : - SELECT count(DISTINCT ResponseNo) FROM actvet_uc.gold.schools_parents_survey WHERE Entity = 'ATS' and  year = 2019;"
@@ -105,19 +95,12 @@
     "schools dashboard":[
         "Whenever user asks for total unique students make sure to use schools_dashboard_dim_student[Student_Key_Code]) and additionally add [Data_Subject] = 'Student Enrollment', schools_dashboard_fact_enrollment[Number_of_Students] = 1, schools_dashboard_fact_enrollment[Data_Source] = 'School', schools_dashboard_dim_academic_organization[Entity] <> 'VEDC'"
     ],
-    "adveti students satisfaction":[
-        "Whenever user ask for response count in the query then take DISTINCT",
-        "whenever user ask anything related to satisfaction ratio by category use AnswerScore instead of survey_result For Example -> SELECT Category, AVG(AnswerScore) AS Satisfaction_Ratio FROM actvet_uc.gold.adveti_student_surveys WHERE Year = 2021 GROUP BY Category;",
-        "Whenever user asks anything additionally like 'Al Jaheli Institute','Al Jazirah Institute','VEDC Sharjah','Baynounah Institute','Al Reef Institute','Al Jazirah Institute- Shahama' or 'VEDC Abu Dhabi' its compulsory to always use the column name 'Campus' as a filer for these Institutes instead of Entity, and keep in mind that its compulsory to use a small letter 'l' for the word 'AL' in the filter Campus for Example Campus = 'Al Jazirah Institute' instead of Campus = 'AL Jazirah Institute'",
-        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter.",
-        "whenever user asks anything related student satisfaction percentage never include survey_type as a filter and additionally if general english program is mentioned in the question then make sure you add program = 'General English Program' as a filter",
-        "whenever user asks anything related to the survey result percentage then its compulsory to use avg(survey_result) instead of survey_result, for Example: SELECT avg(survey_result) FROM actvet_uc.gold.adveti_student_surveys Learning Resources and Facilities' AND year = 2022;",
-        "If in the user question 'very good' or 'good' or 'average' or 'poor' or 'very poor' is mentioned, then use the following sql skeleton: SELECT sum(ResponseCount) FROM actvet_uc.gold.adveti_student_surveys WHERE Answer IN ('Answer 1','Answer 2','Answer 3') and Category = 'Category Name' and year = year. These are the ```combinations:[('1','Very Good','Extremely Satisfied'), ('2','Good', 'Satisfied'), ('3','Average', 'Acceptable'), ('4','Poor', 'Dissatisfied'), ('5','Very Poor','Extremely Dissatisfied')]```. Where Answer 1, Answer 2 and Answer 3 are values from the column named ```Answer```",
-        "So in the skeleton above Answer 1, Answer 2 and Answer 3 will always be a combination of three values from the column name ```Answer``` as mentioned above in the list ```combinations, STRICTLY USE ALL THE COMBINATIONS TOGETHER```.For Example, user_question: ```give me the very good count of survey result details for 'General Feedback' for 2021```, sql_query: ```SELECT sum(ResponseCount) FROM actvet_uc.gold.adveti_student_surveys WHERE Answer IN ('1','Extremely Satisfied','Very Good') and Category = 'General Feedback' and year = 2021```."
-    ],
     "social media dashboard": [
+        "Here the column Date and followers datatype is string so always caste 'Date' datatype to DATE and followers to INT",
         "whenever user asks anything related to the count of current followers its compulsory to use ```SUM(followers)``` instead of ```count(followers)```, additionally add the filter ```Date = (SELECT MAX(CAST(`Date` AS DATE)) FROM actvet_uc.gold.socialmediaaccounts_data)```",
-        "whenever user asks anything related to the overall count or count or total count of current followers without mentioning any account type then make sure you add the filter using the keyword IN like ```WHERE Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn ', 'Twitter', 'Telegram')```"
+        "whenever user asks anything related to the overall count or count or total count of current followers without mentioning any account type then make sure you add the filter using the keyword IN like ```WHERE Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram')```",
+        "when asked for previous month, in the sql sql_query use WHERE CAST(`Date` AS DATE) = (SELECT MAX(CAST(`Date` AS DATE)) - INTERVAL 1 MONTH FROM actvet_uc.gold.socialmediaaccounts_data) instead of WHERE CAST(`Date` AS DATE) = DATE_SUB((SELECT MAX(CAST(`Date` AS DATE)) FROM actvet_uc.gold.socialmediaaccounts_data), INTERVAL 1 MONTH)",
+        "whenever user asks for count of followers for the last three month or count of followers for previous 3 months then use this sql_query: WITH ct1 AS (SELECT SUM(CAST(followers AS INT)) AS current_followers FROM actvet_uc.gold.socialmediaaccounts_data WHERE CAST(`Date` AS DATE) = (SELECT MAX(CAST(`Date` AS DATE)) FROM actvet_uc.gold.socialmediaaccounts_data) AND Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram')),ct2 AS (SELECT SUM(CAST(followers AS INT)) AS previous_followers FROM actvet_uc.gold.socialmediaaccounts_data WHERE CAST(`Date` AS DATE) = (SELECT MAX(CAST(`Date` AS DATE)) - INTERVAL 1 MONTH FROM actvet_uc.gold.socialmediaaccounts_data) AND Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram')),ct3 as (SELECT SUM(CAST(followers AS INT)) as prevtoprev FROM actvet_uc.gold.socialmediaaccounts_data WHERE CAST(`Date` AS DATE) = (SELECT MAX(CAST(`Date` AS DATE)) - INTERVAL 2 MONTH FROM actvet_uc.gold.socialmediaaccounts_data) AND Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram'))SELECT (ct2.previous_followers - ct3.prevtoprev)+(ct1.current_followers - ct2.previous_followers) AS total_followers FROM ct1, ct2, ct3;","when user asks anything related to the count of new followers, then use this sql_query: WITH ct1 AS (SELECT SUM(CAST(followers AS INT)) AS current_followers FROM actvet_uc.gold.socialmediaaccounts_data WHERE CAST(`Date` AS DATE) = (SELECT MAX(CAST(`Date` AS DATE)) FROM actvet_uc.gold.socialmediaaccounts_data) AND Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram')),ct2 AS (SELECT SUM(CAST(followers AS INT)) AS previous_followers FROM actvet_uc.gold.socialmediaaccounts_data WHERE CAST(`Date` AS DATE) = (SELECT MAX(CAST(`Date` AS DATE)) - INTERVAL 1 MONTH FROM actvet_uc.gold.socialmediaaccounts_data) AND Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram')) SELECT (ct1.current_followers-ct2.previous_followers) AS total_followers FROM ct1, ct2;", "whenever user asks anything related to the monthly followers trend or count of current followers on a monthly basis or trend of the current followers from jan to dec in 2023 then use the sql query: WITH MaxYear AS (SELECT YEAR(MAX(CAST(`Date` AS DATE))) AS MaxYear FROM actvet_uc.gold.socialmediaaccounts_data) SELECT CAST(`Date` AS DATE) as Month, SUM(CAST(followers AS INT)) as Followers FROM actvet_uc.gold.socialmediaaccounts_data, MaxYear WHERE CAST(`Date` AS DATE) BETWEEN CONCAT(MaxYear.MaxYear, '-01-01') AND CONCAT(MaxYear.MaxYear, '-12-31') AND Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram') GROUP BY Month ORDER BY Month;", "whenever user asks anything related to the monthly new followers trend or count of new followers on a monthly basis or trend of the new followers from jan to dec in 2023 then use the sql query: WITH monthly_data AS (SELECT CAST(`Date` AS DATE) AS Month, SUM(CAST(followers AS INT)) AS total_followers, Account FROM actvet_uc.gold.socialmediaaccounts_data WHERE Account IN ('Facebook', 'Instagram', 'YouTube', 'linkedIn', 'Twitter', 'Telegram') GROUP BY Month, Account),monthly_growth AS (SELECT Month,Account,total_followers - LAG(total_followers) OVER (PARTITION BY Account ORDER BY Month) AS new_followers FROM monthly_data) SELECT Month, Account, new_followers FROM monthly_growth ORDER BY Month, Account;"
     ],
 
     "schools students satisfaction": [
@@ -149,6 +132,82 @@
     
         "If in the user question 'duration to get a job' or similar is mentioned, then consider this sql query along with other parameters: ```SELECT B.GOT_EMPLOYED_PERIOD, COUNT(DISTINCT A.Key_SRGT_Student) FROM actvet_uc.gold.G_and_A_Traccking_Student AS A INNER JOIN actvet_uc.gold.g_and_a_traccking_employment B ON A.Key_SRGT_Student = B.Key_SRGT_Student INNER JOIN actvet_uc.gold.G_and_A_Traccking_EmploymentStatus C ON C.Key_SRGT_Employment_Status = B.Key_SRGT_Employment_Status WHERE C.ExcludedFromEmployment = 'No' AND B.SecureEmployment = 1 GROUP BY B.GOT_EMPLOYED_PERIOD;```"
     ],
-    "emsat analysis": [],
-    "post-secondary monthly snapshot": []
+    "emsat analysis": [
+        "If in the user question 'student counts' or 'count of students' is mentioned then always use ```COUNT(*)``` instead of ```COUNT(DISTINCT StudentID)```.",
+    
+        "Cast the ```Result``` column from ```emsat_data``` table to integer every time and then do the calculation.",
+    
+        "If in the question 'arabic result by result category' or 'biology result by result category' or similar is mentioned, then always use ```COUNT(*)``` instead of ```AVG(CAST(Result AS))```",
+    
+        "If in the user question 'point system' is mentioned, then always use this SQL query along with the other filters if required: ```WITH FilteredData AS (SELECT School_Score Result FROM actvet_uc.gold.emsat_data WHERE Exam = 'Arabic' AND Academic_Year = '2020-2021') SELECT SUM(School_Score) / NULLIF(COUNT(Result), 0) AS FROM FilteredData;```",
+    
+        "If in the user question 'exams they passes' or 'exams passed' is mentioned then always use ```COUNT(DISTINCT StudentID)``` instead of ```COUNT(*)```. Also add the filter ```CAST(Result AS INT) >= 1100``` as a passing criteria.",
+    
+        "If in the user question 'enrolled ratio' is mentioned then always do ```COUNT(Result)/SUM(Enrolled_Students)``` where ```Result``` is selected from ```emsat_data``` table and ```Enrolled_Students``` is selected from ```emsat_enrollment_data``` table.",
+    
+        "If in the user question 'target score' is mentioned, then follow this SQL query along with other filters: ```WITH temp AS (SELECT DISTINCT te.TargetKey, CAST(te.Target_Score AS INT) as Target_Score, AVG(CAST(ed.Result AS INT)) over() AS Result_Score FROM actvet_uc.gold.target_emsat te INNER JOIN actvet_uc.gold.emsat_data ed ON ed.TargetKey = te.TargetKey WHERE ed.Academic_Year = '2022-2023' AND ed.School_Name_EN = 'Dubai Boys') SELECT avg(Target_Score), avg(Result_Score) FROM temp;```",
+    
+        "If in the user question 'scinece emsat classification' is mentioned then always use ```Result_Category_Science``` column and don't the filter ```Exam = 'Science'```. The ```Exam``` column from ```emsat_data``` has only these unique values: ['Math', 'Chemistry', 'English', 'Arabic', 'Physics', 'Computer Science', 'Biology'].",
+    
+        "If in the user question 'arabic emsat classification' is mentioned, then don't add the ```Exam = 'Arabic'``` filter to the SQL query.",
+    
+        "If in the user question 'english emsat classification' or 'english classification result' or 'english classification' is mentioned, then don't add the ```Exam = 'English'``` filter to the SQL query. And use ```COUNT(Result)```, instead of ```COUNT(DISTINCT StudentID)```",
+    
+        "If in the user question 'greater then 2000' or 'greater than 1500' result is mentioned, then always treate as 'greater than or equal to'. And always convert `Result` column to integer.```"
+    ],
+    "post-secondary monthly snapshot": [
+        "If in the user question 'enrolled students' is mentioned, then always use distinct count of ```Student_Key_Code``` from `psm_snapshot_dim_student` table and add as ```Data_Subject = 'Student Enrollment'``` from the `psm_snapshot_linktable`, ```Student_Currently_Enrolled = 'Yes' AND Number_of_Students = 1 AND Data_Source = 'Institute'``` from the `psm_snapshot_student_enrollment`. And, if in the user question 'year' is mentioned but if month is not mentioned then always use maximum value of ```Month``` column for the year from the `psm_snapshot_linktable`",
+
+        "If in the user question 'campus' is mentioned then use the `Campus_Name_EN` column from the `psm_snapshot_dim_academic_organization` table."
+    ],
+    "digital transformation dashboard": [
+        "If in the user question 'transferable services' is mentioned, then always use the `Service_Code` column from ```digial_transformation_actvet_services``` table and for the year, always use `Year` column from ```linktable_digitaltransformationdashboard``` table.",
+    
+        "If in the user question 'year' is mentioned, then always use `Year` column from the ```linktable_digitaltransformationdashboard``` table",
+    
+        "If in the user question 'delivered services' or 'services provided' is mentioned, then always calculate the distinct count of `RequestID` from ```linktable_digitaltransformationdashboard``` table. Also, add `TransType = 'Requests'` from the ``linktable_digitaltransformationdashboard```` table and `Request_Status = 'Completed' AND ServiceCount = 1` from the ```digital_transformation_requests``` table.",
+    
+        "If in the user question 'reducing carbon dioxide emissions' or 'CO2 emissions' is mentioned, then use this SQL query along with other parameters: ```WITH AvgTimeForRoundTrip AS (SELECT AVG(Value) AS AvgTime FROM actvet_uc.gold.digital_transformationParameters WHERE Parameter = 'Average time for round trip to the entity visit'), AvgSpeedPerIndividual AS (SELECT AVG(Value) AS AvgSpeed FROM actvet_uc.gold.digital_transformationParameters WHERE Parameter = 'Average Speed per Individual on the road'), AvgCO2Emissions AS (SELECT AVG(Value) AS AvgCO2 FROM actvet_uc.gold.digital_transformationParameters WHERE Parameter = 'Average CO2/emissions of cars registered for first time'),AvgVisitsReduction AS ( SELECT AVG(Value) AS AvgVisits FROM actvet_uc.gold.digital_transformationParameters WHERE Parameter = 'Number of visit to be reduced per transaction'), DistinctRequestCount AS (SELECT COUNT(DISTINCT RequestID) AS RequestCount FROM actvet_uc.gold.LinkTable_DigitalTransformationDashboard WHERE TransType = 'Requests' AND Year = 2022) SELECT  (AvgTime * AvgSpeed * AvgCO2 * RequestCount * AvgVisits) / 1000000 AS TotalEmissionReduction FROM AvgTimeForRoundTrip, AvgSpeedPerIndividual, AvgCO2Emissions, AvgVisitsReduction, DistinctRequestCount;```",
+    
+        "If in the user question 'customer care visit' is mentioned, then always use this SQL query along with other parameters: ```SELECT (SELECT COUNT(DISTINCT RequestID) FROM actvet_uc.gold.linktable_digitaltransformationdashboard WHERE TransType = 'Requests' AND Year = 2023) * (SELECT AVG(Value) FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Number of visit to be reduced per transaction') AS CustomercareVisit;```",
+    
+        "If in the user question 'ADE - Customer Saving' is mentioned, then always use this SQL query along with other parameters: ```SELECT ((AvgSalary * AvgTimeVisit) + (AvgSalary * AvgTimeRoundTrip) + AvgFuel + AvgParking) * (RequestCount * AvgVisits) AS CustomerSavingADE FROM (SELECT AVG(Value) AS AvgSalary FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Average salary for customer per hour (time cost)') AS AvgSalaryPerHour, (SELECT AVG(Value) AS AvgTimeVisit FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Average time in each visit') AS AvgTimePerVisit, (SELECT AVG(Value) AS AvgTimeRoundTrip FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Average time for round trip to the entity visit') AS AvgTimeForRoundTrip, (SELECT AVG(Value) AS AvgFuel FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Fuel cost') AS AvgFuelCost, (SELECT AVG(Value) AS AvgParking FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Parking cost (Mawaqif)') AS AvgParkingCost, (SELECT AVG(Value) AS AvgVisits FROM actvet_uc.gold.digital_transformationparameters WHERE Parameter = 'Number of visit to be reduced per transaction') AS AvgVisitsReduction, (SELECT COUNT(DISTINCT RequestID) AS RequestCount FROM actvet_uc.gold.linktable_digitaltransformationdashboard WHERE TransType = 'Requests' AND Year = 2022) AS DistinctRequestCount;```",
+    
+        "If in the user question 'ADGES days saving' or similar is mentioned then always use this SQL query along with other parameters: ```SELECT (AVG(Value) * COUNT(DISTINCT RequestID) / 8) AS ADGESavingDays FROM actvet_uc.gold.digital_transformationparameters, actvet_uc.gold.linktable_digitaltransformationdashboard WHERE Parameter = 'Average time To complete the transaction' AND TransType = 'Requests' AND Year = 2020;```"
+    ],
+    "adveti students satisfaction":[
+        "Whenever user ask for response count in the query then take DISTINCT",
+        "whenever user ask anything related to satisfaction ratio by category use AnswerScore instead of survey_result For Example -> SELECT Category, AVG(AnswerScore) AS Satisfaction_Ratio FROM actvet_uc.gold.adveti_student_surveys WHERE Year = 2021 GROUP BY Category;",
+        "Whenever user asks anything additionally like 'Al Jaheli Institute','Al Jazirah Institute','VEDC Sharjah','Baynounah Institute','Al Reef Institute','Al Jazirah Institute- Shahama' or 'VEDC Abu Dhabi' its compulsory to always use the column name 'Campus' as a filer for these Institutes instead of Entity, and keep in mind that its compulsory to use a small letter 'l' for the word 'AL' in the filter Campus for Example Campus = 'Al Jazirah Institute' instead of Campus = 'AL Jazirah Institute'",
+        "If in the user question 'year' is not mentioned, then always add the maximum value of the 'year' column as a filter.",
+        "whenever user asks anything related student satisfaction percentage never include survey_type as a filter and additionally if general english program is mentioned in the question then make sure you add program = 'General English Program' as a filter",
+        "whenever user asks anything related to the survey result percentage then its compulsory to use avg(survey_result) instead of survey_result, for Example: SELECT avg(survey_result) FROM actvet_uc.gold.adveti_student_surveys Learning Resources and Facilities' AND year = 2022;",
+        "If in the user question 'very good' or 'good' or 'average' or 'poor' or 'very poor' is mentioned, then use the following sql skeleton: SELECT sum(ResponseCount) FROM actvet_uc.gold.adveti_student_surveys WHERE Answer IN ('Answer 1','Answer 2','Answer 3') and Category = 'Category Name' and year = year. These are the ```combinations:[('1','Very Good','Extremely Satisfied'), ('2','Good', 'Satisfied'), ('3','Average', 'Acceptable'), ('4','Poor', 'Dissatisfied'), ('5','Very Poor','Extremely Dissatisfied')]```. Where Answer 1, Answer 2 and Answer 3 are values from the column named ```Answer```",
+        "So in the skeleton above Answer 1, Answer 2 and Answer 3 will always be a combination of three values from the column name ```Answer``` as mentioned above in the list ```combinations, STRICTLY USE ALL THE COMBINATIONS TOGETHER```.For Example, user_question: ```give me the very good count of survey result details for 'General Feedback' for 2021```, sql_query: ```SELECT sum(ResponseCount) FROM actvet_uc.gold.adveti_student_surveys WHERE Answer IN ('1','Extremely Satisfied','Very Good') and Category = 'General Feedback' and year = 2021```."
+    ],
+    "customer care satisfaction": [
+        "strictly In every SQL query, use the column 'SurveyCount' with the value = 1 from the table 'LinkTable_CustomerCareSatisfaction' join it with target_customercaresatisfaction don't use in case count",
+        "Whenever a user asks for the satisfaction index achieved, use the 'overall_score' from the 'customer_survey_customercaresatisfaction' table. Also, multiply the average by 25 to calculate the percentage.",
+        "For customers who are 'satisfied,' user query contain the key word 'satisfied' the 'overall_score' should be >= 3. Do not use this condition for any other cases like 'satisfaction'; it should only be 'satisfied.'",
+        " strictly Never use the condition 'overall_score >=3' for question related to 'licensing' ",
+        "for  actvet complaints use Claim_Type ='ACTVET Complaints'and for ADVETI complaint use Claim_type='ADVETI Complaints' and for IAT use Clain_type='IAT Complaints'"
+    ],
+    "post-secondary admission dashboard": [
+        "For ADVETI registered student use Institute_Name='ADVETI',for ADPOLY use Institute_Name='ADPOLY',for FCHS use Institute_Name='FCHS'"
+    ],
+    "schools alumni": [
+        "for query related gradute by school use Campus_Name_EN from dim_academic_organization "
+    ],
+    "emirates skills": [
+        "In questions related to winners dont use gcc table",
+        "When user ask for gcc competitors by school use 'School' column from competitors Table",
+        "when user ask for medals from asia skill then use Asia_Skills_Winner = 1",
+        "when user ask anything from asia skill then use Asia_Skills =1",
+        "when user ask for the training analysis then goup by  [International_Training_Count = 1 , Local_Training_Count = 1]"
+    ],
+    "schools students behaviour": [
+        "whenever user query contain violators than BehaviourFlag='1'",
+        "Whenever user ask for violators then use Student_ID and when user ask for violations then use Case_Reference ",
+        " whenever query is aksed group  by stream then use column 'Stream' from the table ss_behaviour_dim_academic_stream"
+    ]
 }
